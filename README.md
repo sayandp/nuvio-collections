@@ -1,4 +1,4 @@
-# Sayand's Collections — Nuvio / Stremio add-on
+# Sayand's Collections: Nuvio / Stremio add-on
 
 Install in Nuvio → Add-ons → Install from URL:
 
@@ -6,10 +6,28 @@ Install in Nuvio → Add-ons → Install from URL:
 https://sayandp.github.io/nuvio-collections/manifest.json
 ```
 
-32 catalogs: favourites, For You recommendations, "Because you like…", sitcoms by era (70s–2020s + India),
-Netflix / Prime / Hulu & FX / HBO / Apple TV+ originals, international & British series, After Dark 18+, and more.
+**100+ shelves, rebuilt every day from TMDB** by a GitHub Action:
 
-## Update
-1. Edit `FAV_SERIES`, `FAV_MOVIES` or the `DB` table in `tools/build.py`
-2. `python tools/build.py --resolve`  (verifies/fixes IMDb IDs via Cinemeta, needs internet)
-3. Commit and push — GitHub Pages republishes in about a minute.
+- **Charts:** trending today and this week, most popular, all-time top rated, fresh from theatres, new episodes this week
+- **Sitcoms:** every sitcom ever (thousands, infinite scroll), greatest sitcoms, the 60s to the 2020s, animated, British, mockumentary, workplace, dark comedy
+- **Anime:** most popular, masterpieces, airing now, anime movies, shōnen, isekai, mecha, seinen, Studio Ghibli
+- **Platform originals:** Netflix, HBO, Max, Prime Video, Apple TV+, Disney+, Hulu, FX, AMC, BBC, Adult Swim
+- **Moods and themes:** binge-worthy, hidden gems, miniseries, true crime, K-drama, time travel, end of the world, heists, mind-bending twists, cyberpunk, cult classics, under 90 minutes, and more
+- **Personal:** My Favourites, For You (built from TMDB recommendations of your favourites), Because You Like…, After Dark 18+
+
+Each title shows a ★ rating, the year and the reason it was recommended.
+
+## One-time setup
+1. Repo → Settings → Secrets and variables → Actions → **New repository secret**
+   Name: `TMDB_API_KEY`, value: your TMDB v3 API key *or* v4 read access token
+2. Actions tab → **Rebuild collections** → **Run workflow** (the first run takes 5–15 minutes)
+
+## Customise
+Edit `tools/build_tmdb.py`:
+- `FAV_SERIES` / `FAV_MOVIES`: your taste. Add `Title:Year` when a name is ambiguous.
+- `AFTER_DARK`: picks for the 18+ shelf
+- `CATALOGS`: add, remove or resize shelves (one line each)
+- `STYLE = "plain"` if your TV shows boxes instead of the 𝗳𝗮𝗻𝗰𝘆 shelf names
+
+Push the change and the Action rebuilds automatically.
+Test without a key: `python tools/build_tmdb.py --selftest`
