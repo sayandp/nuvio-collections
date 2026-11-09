@@ -10,7 +10,7 @@ Edit CONFIG below: favourites, after-dark picks, page limits, name style.
 """
 import concurrent.futures as cf
 import datetime as dt
-import json, os, random, re, shutil, sys, time, urllib.parse, urllib.request
+import json, math, os, random, re, shutil, sys, time, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "imdb_cache.json")
@@ -62,7 +62,7 @@ CATALOGS = [
   ("airing-this-week",     T,  "New Episodes This Week",    "📺", "list:tv/on_the_air", {}, 200),
 
   # ---------------- sitcoms  (thousands, paginated)
-  ("sitcoms-all",       T, "Every Sitcom Ever",          "😂", "discover", {**POP}, 4000, ["sitcom"]),
+  ("sitcoms-all",       T, "Every Sitcom Ever",          "😂", "discover", {**POP}, 5000, ["sitcom", "british sitcom", "family sitcom", "workplace comedy", "mockumentary", "multi-camera"]),
   ("sitcoms-top",       T, "Greatest Sitcoms",           "👑", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 150}, 500, ["sitcom"]),
   ("sitcoms-60s",       T, "Sitcoms · The 60s",          "📻", "discover", {**POP, **dec(1950, 1969)}, 400, ["sitcom"]),
   ("sitcoms-70s",       T, "Sitcoms · The 70s",          "🕺", "discover", {**POP, **dec(1970, 1979)}, 500, ["sitcom"]),
@@ -121,7 +121,7 @@ CATALOGS = [
   ("legal-drama",      T, "Legal Drama",               "⚖️", "discover", {**POP}, 200, ["legal drama"]),
 
   # ---------------- movie collections
-  ("mind-bending",     Mv, "Mind-Bending Twists",      "🧠", "discover", {**POP}, 300, ["twist ending"]),
+  ("mind-bending",     Mv, "Mind-Bending Twists",      "🧠", "discover", {**POP}, 300, ["twist ending", "plot twist", "nonlinear timeline", "mind bending", "unreliable narrator"]),
   ("time-travel-mov",  Mv, "Time-Travel Movies",       "⏳", "discover", {**POP}, 200, ["time travel"]),
   ("heist",            Mv, "Heists & Capers",          "💰", "discover", {**POP}, 200, ["heist"]),
   ("serial-killer",    Mv, "Serial-Killer Thrillers",  "🔪", "discover", {**POP}, 200, ["serial killer"]),
@@ -132,11 +132,11 @@ CATALOGS = [
   ("zombies",          Mv, "Zombies",                  "🧟", "discover", {**POP}, 200, ["zombie"]),
   ("superhero-mov",    Mv, "Superhero Movies",         "🦸", "discover", {**POP}, 300, ["superhero"]),
   ("coming-of-age",    Mv, "Coming of Age",            "🌅", "discover", {**POP}, 300, ["coming of age"]),
-  ("cult-classics",    Mv, "Cult Classics",            "🦇", "discover", {**POP}, 200, ["cult film"]),
+  ("cult-classics",    Mv, "Cult Classics",            "🦇", "discover", {**POP}, 200, ["cult film", "cult classic"]),
   ("martial-arts",     Mv, "Martial Arts",             "🥋", "discover", {**POP}, 200, ["martial arts"]),
   ("psych-thriller",   Mv, "Psychological Thrillers",  "🌀", "discover", {**POP}, 300, ["psychological thriller"]),
   ("revenge",          Mv, "Revenge Stories",          "🗡️", "discover", {**POP}, 200, ["revenge"]),
-  ("feel-good",        Mv, "Feel-Good Movies",         "🌈", "discover", {**POP}, 200, ["feel-good"]),
+  ("feel-good",        Mv, "Feel-Good Movies",         "🌈", "discover", {**POP, "vote_average.gte": 6.5}, 200, ["feel-good", "feel good", "heartwarming", "uplifting"]),
   ("hidden-gem-movies",Mv, "Hidden Gem Movies",        "💎", "discover", {"sort_by": "vote_average.desc", "vote_average.gte": 7.4, "vote_count.gte": 200, "vote_count.lte": 2000}, 300),
   ("quick-watch",      Mv, "Under 90 Minutes",         "⏱️", "discover", {**POP, "with_runtime.lte": 90, "with_runtime.gte": 60, "vote_average.gte": 6.5, "vote_count.gte": 300}, 300),
   ("action",           Mv, "Pure Action",              "💥", "discover", {**POP, "with_genres": "28"}, 500),
@@ -307,7 +307,8 @@ def recommend(favs, typ):
         recs = [x for x in recs if x["id"] not in fav_ids]
         per_fav[fname] = recs
         for rank, x in enumerate(recs):
-            w = 1.0 / (1 + rank * 0.15) * (0.5 + (x.get("vote_average") or 0) / 20)
+            vc = x.get("vote_count") or 0
+            w = 1.0 / (1 + rank * 0.15) * (0.5 + (x.get("vote_average") or 0) / 20) * min(1.0, 0.25 + math.log10(vc + 1) / 4)
             if x["id"] not in score or w > why[x["id"]][1]:
                 why[x["id"]] = (fname, w)
             score[x["id"]] = score.get(x["id"], 0) + w
