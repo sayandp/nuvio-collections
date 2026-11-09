@@ -1,0 +1,183 @@
+{
+  "id": "com.sayand.nuvio.collections",
+  "version": "1.0.0",
+  "name": "Sayand's Collections",
+  "description": "Personal favourites, sitcoms by era, Netflix / Prime / Hulu / HBO / Apple shelves, international mix, After Dark 18+ and a taste-based recommender.",
+  "logo": "https://images.metahub.space/poster/medium/tt0108778/img",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tt"
+  ],
+  "catalogs": [
+    {
+      "type": "series",
+      "id": "fav-series",
+      "name": "★ My Favourite Series"
+    },
+    {
+      "type": "movie",
+      "id": "fav-movies",
+      "name": "★ My Favourite Movies"
+    },
+    {
+      "type": "movie",
+      "id": "for-you-movie",
+      "name": "For You · Movies"
+    },
+    {
+      "type": "series",
+      "id": "for-you-series",
+      "name": "For You · Series"
+    },
+    {
+      "type": "series",
+      "id": "sitcom-70s",
+      "name": "Sitcoms of the 70s"
+    },
+    {
+      "type": "series",
+      "id": "sitcom-80s",
+      "name": "Sitcoms of the 80s"
+    },
+    {
+      "type": "series",
+      "id": "sitcom-90s",
+      "name": "Sitcoms of the 90s"
+    },
+    {
+      "type": "series",
+      "id": "sitcom-00s",
+      "name": "Sitcoms of the 2000s"
+    },
+    {
+      "type": "series",
+      "id": "sitcom-10s",
+      "name": "Sitcoms of the 2010s"
+    },
+    {
+      "type": "series",
+      "id": "sitcom-20s",
+      "name": "Sitcoms of the 2020s"
+    },
+    {
+      "type": "series",
+      "id": "sitcom-india",
+      "name": "Indian Comedy Shelf"
+    },
+    {
+      "type": "series",
+      "id": "netflix",
+      "name": "Netflix Originals"
+    },
+    {
+      "type": "series",
+      "id": "prime",
+      "name": "Prime Video Originals"
+    },
+    {
+      "type": "series",
+      "id": "hulu",
+      "name": "Hulu & FX"
+    },
+    {
+      "type": "series",
+      "id": "hbo",
+      "name": "HBO & Max"
+    },
+    {
+      "type": "series",
+      "id": "apple",
+      "name": "Apple TV+"
+    },
+    {
+      "type": "series",
+      "id": "international",
+      "name": "International Series Mix"
+    },
+    {
+      "type": "series",
+      "id": "british",
+      "name": "British Series"
+    },
+    {
+      "type": "series",
+      "id": "india-series",
+      "name": "Indian Series"
+    },
+    {
+      "type": "series",
+      "id": "comfort",
+      "name": "Comfort Watch"
+    },
+    {
+      "type": "series",
+      "id": "after-dark-violence",
+      "name": "After Dark 18+ · Brutal & Violent"
+    },
+    {
+      "type": "series",
+      "id": "after-dark-explicit",
+      "name": "After Dark 18+ · Explicit"
+    },
+    {
+      "type": "series",
+      "id": "epic-fantasy",
+      "name": "Epic Fantasy & Period Wars"
+    },
+    {
+      "type": "series",
+      "id": "crime",
+      "name": "Crime & Gangsters"
+    },
+    {
+      "type": "movie",
+      "id": "malayalam-movies",
+      "name": "Malayalam Favourites"
+    },
+    {
+      "type": "movie",
+      "id": "mind-bending",
+      "name": "Mind-Bending Movies"
+    },
+    {
+      "type": "series",
+      "id": "because-breaking-bad",
+      "name": "Because you like Breaking Bad"
+    },
+    {
+      "type": "series",
+      "id": "because-game-of-thrones",
+      "name": "Because you like Game of Thrones"
+    },
+    {
+      "type": "series",
+      "id": "because-friends",
+      "name": "Because you like Friends"
+    },
+    {
+      "type": "movie",
+      "id": "because-interstellar",
+      "name": "Because you like Interstellar"
+    },
+    {
+      "type": "movie",
+      "id": "because-inception",
+      "name": "Because you like Inception"
+    },
+    {
+      "type": "movie",
+      "id": "because-the-dark-knight",
+      "name": "Because you like The Dark Knight"
+    }
+  ],
+  "behaviorHints": {
+    "configurable": false,
+    "adult": false
+  }
+}
