@@ -61,6 +61,41 @@ CATALOGS = [
   ("now-playing",          Mv, "Fresh From Theatres",       "🎟️", "list:movie/now_playing", {}, 100),
   ("airing-this-week",     T,  "New Episodes This Week",    "📺", "list:tv/on_the_air", {}, 200),
 
+  # ---------------- India: Malayalam, Tamil, Hindi, Telugu, Kannada
+  ("ml-trending",     Mv, "Trending in Malayalam",        "🌴", "discover", {**POP, "with_original_language": "ml", "primary_release_date.gte": SINCE(150)}, 200),
+  ("ml-this-year",    Mv, "Malayalam · New This Year",    "🆕", "discover", {**POP, "with_original_language": "ml", "primary_release_date.gte": f"{TODAY.year}-01-01"}, 300),
+  ("ml-all",          Mv, "Every Malayalam Movie",        "🎞️", "discover", {**POP, "with_original_language": "ml"}, 5000),
+  ("ml-best",         Mv, "Malayalam Masterpieces",       "🏆", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 40, "with_original_language": "ml"}, 500),
+  ("ml-thrillers",    Mv, "Malayalam Thrillers",          "🔎", "discover", {**POP, "with_original_language": "ml", "with_genres": "53"}, 500),
+  ("ml-comedy",       Mv, "Malayalam Comedy",             "😆", "discover", {**POP, "with_original_language": "ml", "with_genres": "35"}, 500),
+  ("ml-family",       Mv, "Malayalam Family Drama",       "🏡", "discover", {**POP, "with_original_language": "ml", "with_genres": "10751|18"}, 500),
+  ("ml-crime",        Mv, "Malayalam Crime & Mass",       "🔥", "discover", {**POP, "with_original_language": "ml", "with_genres": "80|28"}, 400),
+  ("ml-80s-90s",      Mv, "Mollywood Golden Era · 80s & 90s","📼", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 10, "with_original_language": "ml", **dec(1980, 1999, "primary_release_date")}, 400),
+  ("ml-series",       T,  "Malayalam Series",             "📺", "discover", {**POP, "with_original_language": "ml"}, 300),
+  ("ml-mohanlal",     Mv, "Mohanlal Collection",          "🦁", "discover", {**POP, "_cast": "Mohanlal"}, 400),
+  ("ml-mammootty",    Mv, "Mammootty Collection",         "👑", "discover", {**POP, "_cast": "Mammootty"}, 400),
+  ("ml-fahadh",       Mv, "Fahadh Faasil Collection",     "🎭", "discover", {**POP, "_cast": "Fahadh Faasil"}, 150),
+  ("ml-prithviraj",   Mv, "Prithviraj Collection",        "⚡", "discover", {**POP, "_cast": "Prithviraj Sukumaran"}, 150),
+  ("ml-dulquer",      Mv, "Dulquer Salmaan Collection",   "🌟", "discover", {**POP, "_cast": "Dulquer Salmaan"}, 100),
+  ("ta-trending",     Mv, "Trending in Tamil",            "🎺", "discover", {**POP, "with_original_language": "ta", "primary_release_date.gte": SINCE(150)}, 200),
+  ("ta-all",          Mv, "Every Tamil Movie",            "🎞️", "discover", {**POP, "with_original_language": "ta"}, 5000),
+  ("ta-best",         Mv, "Tamil Masterpieces",           "🏆", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 40, "with_original_language": "ta"}, 500),
+  ("ta-action",       Mv, "Tamil Mass & Action",          "💥", "discover", {**POP, "with_original_language": "ta", "with_genres": "28"}, 500),
+  ("ta-thrillers",    Mv, "Tamil Thrillers",              "🔎", "discover", {**POP, "with_original_language": "ta", "with_genres": "53|80"}, 400),
+  ("ta-rajini",       Mv, "Rajinikanth Collection",       "😎", "discover", {**POP, "_cast": "Rajinikanth"}, 200),
+  ("ta-vijay",        Mv, "Vijay Collection",             "🦅", "discover", {**POP, "_cast": "Vijay:Joseph Vijay"}, 120),
+  ("ta-kamal",        Mv, "Kamal Haasan Collection",      "🎬", "discover", {**POP, "_cast": "Kamal Haasan"}, 250),
+  ("ta-series",       T,  "Tamil Series",                 "📺", "discover", {**POP, "with_original_language": "ta"}, 300),
+  ("hi-trending",     Mv, "Trending in Hindi",            "🪔", "discover", {**POP, "with_original_language": "hi", "primary_release_date.gte": SINCE(150)}, 200),
+  ("hi-best",         Mv, "Bollywood Masterpieces",       "🏆", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 100, "with_original_language": "hi"}, 500),
+  ("hi-all",          Mv, "Every Hindi Movie",            "🎞️", "discover", {**POP, "with_original_language": "hi"}, 5000),
+  ("te-trending",     Mv, "Trending in Telugu",           "🌶️", "discover", {**POP, "with_original_language": "te", "primary_release_date.gte": SINCE(150)}, 200),
+  ("te-best",         Mv, "Telugu Masterpieces",          "🏆", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 40, "with_original_language": "te"}, 400),
+  ("kn-best",         Mv, "Kannada Masterpieces",         "🏆", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 25, "with_original_language": "kn"}, 300),
+  ("india-series-best",T, "Best Indian Series",           "🇮🇳", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 30, "with_origin_country": "IN"}, 500),
+  ("india-series-pop",T,  "Trending Indian Series",       "📈", "discover", {**POP, "with_origin_country": "IN", "first_air_date.gte": SINCE(730)}, 300),
+  ("india-crime-series",T,"Indian Crime Thriller Series", "🕵️", "discover", {**POP, "with_origin_country": "IN", "with_genres": "80|9648"}, 300),
+
   # ---------------- sitcoms  (thousands, paginated)
   ("sitcoms-all",       T, "Every Sitcom Ever",          "😂", "discover", {**POP}, 5000, ["sitcom", "british sitcom", "family sitcom", "workplace comedy", "mockumentary", "multi-camera"]),
   ("sitcoms-top",       T, "Greatest Sitcoms",           "👑", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 150}, 500, ["sitcom"]),
@@ -150,6 +185,50 @@ CATALOGS = [
   ("movies-90s",       Mv, "Best of the 90s",          "💿", "discover", {**TOP, **dec(1990, 1999, "primary_release_date")}, 300),
   ("movies-00s",       Mv, "Best of the 2000s",        "📀", "discover", {**TOP, **dec(2000, 2009, "primary_release_date")}, 300),
   ("after-dark-movies",Mv, "After Dark · R-Rated Hits","🔞", "discover", {**POP, "certification_country": "US", "certification": "R|NC-17", "vote_count.gte": 500}, 300),
+  # ---------------- unlimited movies
+  ("movies-all",       Mv, "Every Movie · Most Popular",   "♾️", "discover", {**POP, "vote_count.gte": 50}, 10000),
+  ("movies-top-5000",  Mv, "Top 5000 Rated Movies",        "🥇", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 400}, 5000),
+  ("series-all",       T,  "Every Series · Most Popular",  "♾️", "discover", {**POP, "vote_count.gte": 30}, 6000),
+  ("movies-this-year", Mv, "Best Movies This Year",        "📅", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 80, "primary_release_date.gte": f"{TODAY.year}-01-01"}, 300),
+  ("movies-last-year", Mv, "Best Movies Last Year",        "🗓️", "discover", {"sort_by": "vote_average.desc", "vote_count.gte": 150, **dec(TODAY.year - 1, TODAY.year - 1, "primary_release_date")}, 300),
+  ("thriller",         Mv, "Edge-of-Seat Thrillers",       "😰", "discover", {**POP, "with_genres": "53"}, 1000),
+  ("crime-movies",     Mv, "Crime Movies",                 "🚔", "discover", {**POP, "with_genres": "80"}, 800),
+  ("mystery-movies",   Mv, "Mystery Movies",               "🗝️", "discover", {**POP, "with_genres": "9648"}, 500),
+  ("fantasy-movies",   Mv, "Fantasy Worlds",               "🐉", "discover", {**POP, "with_genres": "14"}, 500),
+  ("adventure",        Mv, "Big Adventures",               "🧭", "discover", {**POP, "with_genres": "12"}, 600),
+  ("war-movies",       Mv, "War Movies",                   "🪖", "discover", {**POP, "with_genres": "10752"}, 300),
+  ("westerns",         Mv, "Westerns",                     "🤠", "discover", {**POP, "with_genres": "37"}, 300),
+  ("musicals",         Mv, "Music & Musicals",             "🎵", "discover", {**POP, "with_genres": "10402"}, 300),
+  ("biopics",          Mv, "Biopics",                      "🧑‍🎤", "discover", {**POP}, 300, ["biography"]),
+  ("courtroom",        Mv, "Courtroom Dramas",             "⚖️", "discover", {**POP}, 200, ["courtroom", "trial"]),
+  ("survival",         Mv, "Survival Stories",             "🏔️", "discover", {**POP}, 300, ["survival"]),
+  ("spy",              Mv, "Spies & Espionage",            "🕶️", "discover", {**POP}, 300, ["spy", "espionage"]),
+  ("gangster",         Mv, "Gangster Epics",               "🎩", "discover", {**POP}, 300, ["gangster", "mafia"]),
+  ("disaster",         Mv, "Disaster Movies",              "🌋", "discover", {**POP}, 200, ["disaster", "natural disaster"]),
+  ("sports-movies",    Mv, "Sports Movies",                "🏏", "discover", {**POP}, 300, ["sports", "underdog"]),
+  ("road-trip",        Mv, "Road Trips",                   "🚗", "discover", {**POP}, 200, ["road trip", "road movie"]),
+  ("vampires",         Mv, "Vampires & Werewolves",        "🧛", "discover", {**POP}, 200, ["vampire", "werewolf"]),
+  ("haunted",          Mv, "Haunted Houses",               "🏚️", "discover", {**POP}, 200, ["haunted house", "ghost"]),
+  ("slashers",         Mv, "Slashers",                     "🎃", "discover", {**POP}, 200, ["slasher"]),
+  ("found-footage",    Mv, "Found Footage",                "📹", "discover", {**POP}, 150, ["found footage"]),
+  ("aliens",           Mv, "Alien Invasion",               "👽", "discover", {**POP}, 200, ["alien", "alien invasion"]),
+  ("ai-robots",        Mv, "AI & Robots",                  "🤖", "discover", {**POP}, 200, ["artificial intelligence", "robot"]),
+  ("christmas",        Mv, "Christmas & New Year",         "🎄", "discover", {**POP}, 300, ["christmas", "new year's eve", "holiday"]),
+  ("kids-tv",          T,  "Kids & Family Series",         "🧒", "discover", {**POP, "with_genres": "10762|10751"}, 300),
+  ("cartoons",         T,  "Cartoons (Non-Anime)",         "🐭", "discover", {**POP, "with_genres": "16", "without_original_language": "ja"}, 400),
+
+  # ---------------- 18+ / not safe to watch (mainstream rated titles only, no adult/porn)
+  ("nsfw-r-all",       Mv, "18+ · Every R-Rated Movie",    "🔞", "discover", {**POP, "certification_country": "US", "certification": "R", "vote_count.gte": 100}, 5000),
+  ("nsfw-nc17",        Mv, "18+ · NC-17 & Uncut",          "⛔", "discover", {**POP, "certification_country": "US", "certification": "NC-17"}, 300),
+  ("nsfw-erotic",      Mv, "18+ · Erotic Thrillers",       "💋", "discover", {**POP}, 400, ["erotic thriller", "erotic movie", "sensuality"]),
+  ("nsfw-nudity-mov",  Mv, "18+ · Steamy & Explicit Movies","🌶️", "discover", {**POP, "vote_count.gte": 100}, 1000, ["nudity", "sex scene", "female nudity"]),
+  ("nsfw-nudity-tv",   T,  "18+ · Steamy & Explicit Series","🌶️", "discover", {**POP}, 500, ["nudity", "sex scene", "female nudity"]),
+  ("nsfw-gore",        Mv, "18+ · Gore & Extreme Horror",  "🩸", "discover", {**POP}, 500, ["gore", "splatter", "body horror", "torture"]),
+  ("nsfw-violent",     Mv, "18+ · Brutal & Ultra-Violent", "🪓", "discover", {**POP, "vote_count.gte": 100}, 800, ["violence", "brutality", "bloodbath", "extreme violence"]),
+  ("nsfw-violent-tv",  T,  "18+ · Brutal & Violent Series","🪓", "discover", {**POP}, 500, ["violence", "brutality", "graphic violence"]),
+  ("nsfw-drugs",       Mv, "18+ · Drugs & Excess",         "💊", "discover", {**POP}, 300, ["drug addiction", "drugs", "cocaine"]),
+  ("nsfw-dark-psych",  Mv, "18+ · Disturbing & Dark",      "🕳️", "discover", {**POP}, 300, ["psychopath", "disturbing", "cannibalism"]),
+  ("nsfw-ml-a",        Mv, "18+ · Indian A-Rated",         "🅰️", "discover", {**POP, "certification_country": "IN", "certification": "A"}, 800),
 ]
 
 # ============================================================================
@@ -203,6 +282,17 @@ def keyword_id(name):
         KW[name] = str((exact or res or [{"id": None}])[0]["id"] or "")
     return KW[name]
 
+PEOPLE = {}
+def person_id(spec):
+    """'Name' or 'Name:Alias'. Picks the best-known matching person."""
+    if spec not in PEOPLE:
+        names = spec.split(":")
+        res = get("search/person", {"query": names[0]}).get("results") or []
+        ok = [r for r in res if r.get("name", "").lower() in [n.lower() for n in names]] or res
+        ok.sort(key=lambda r: -(r.get("popularity") or 0))
+        PEOPLE[spec] = str(ok[0]["id"]) if ok else ""
+    return PEOPLE[spec]
+
 def search(title, typ):
     name, _, year = title.partition(":")
     p = {"query": name}
@@ -227,7 +317,7 @@ def imdb_ids(items):
         typ, tid = k.split(":")
         d = get(f"{typ}/{tid}/external_ids")
         return k, d.get("imdb_id") or ""
-    with cf.ThreadPoolExecutor(12) as ex:
+    with cf.ThreadPoolExecutor(16) as ex:
         for k, v in ex.map(one, need):
             CACHE_D[k] = v
     if need:
@@ -282,6 +372,13 @@ def fetch_catalog(c):
     cid, typ, title, emoji, src, params, maxn = c[:7]
     kws = c[7] if len(c) > 7 else []
     p = dict(params)
+    cast = p.pop("_cast", None)
+    if cast:
+        pid = person_id(cast)
+        if not pid:
+            print(f"  skip {cid}: person not found {cast}")
+            return []
+        p["with_cast"] = pid
     if kws:
         ids = [keyword_id(k) for k in kws]
         ids = [i for i in ids if i]
@@ -364,7 +461,7 @@ def build():
         cid, typ, title, emoji = c[:4]
         raw[cid] = [(r, None) for r in res.get(cid, [])]
         order.append((cid, typ, fancy(title, emoji)))
-        if cid == "airing-this-week":
+        if cid == "nsfw-r-all":
             order.append(("after-dark-series", T, fancy("After Dark · 18+ Series", "🔞")))
 
     typ_of = {cid: typ for cid, typ, _ in order}
@@ -412,6 +509,8 @@ def _fake_get(path, params=None):
         return {"genres": [{"id": 35, "name": "Comedy"}, {"id": 18, "name": "Drama"}, {"id": 16, "name": "Animation"}]}
     if path == "search/keyword":
         return {"results": [] if params["query"] == "feel-good" else [{"id": abs(hash(params["query"])) % 99999, "name": params["query"]}]}
+    if path == "search/person":
+        return {"results": [{"id": 4242, "name": params["query"], "popularity": 9}]}
     if path.endswith("external_ids"):
         tid = int(path.split("/")[1])
         return {"imdb_id": "" if tid % 17 == 0 else f"tt{tid:07d}"}
