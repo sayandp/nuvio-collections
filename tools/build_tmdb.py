@@ -262,17 +262,54 @@ def to_meta(r, typ):
 # ============================================================================
 # Franchise sources: production companies (resolved by exact name), keywords, title searches, collections.
 FRANCHISES = {
+  # companies + keywords catch most; "titles" (exact name:year) add classics TMDB doesn't tag; "search" = name must start with it
   "marvel":     {"companies": ["Marvel Studios", "Marvel Entertainment", "Marvel Enterprises", "Marvel Television",
                                "Marvel Animation", "Marvel Knights"],
-                 "keywords": ["marvel comics", "marvel cinematic universe (mcu)", "based on marvel comics"]},
-  "mcu":        {"companies": ["Marvel Studios"], "keywords": ["marvel cinematic universe (mcu)"]},
+                 "keywords": ["marvel comics", "marvel cinematic universe (mcu)", "based on marvel comics"],
+                 "titles": ["Howard the Duck:1986", "The Punisher:1989", "Captain America:1990", "The Fantastic Four:1994",
+                            "Blade:1998", "Blade II:2002", "Blade: Trinity:2004", "Daredevil:2003", "Elektra:2005",
+                            "The Punisher:2004", "Punisher: War Zone:2008", "Fantastic Four:2005", "Ghost Rider:2007",
+                            "Ghost Rider: Spirit of Vengeance:2011", "Man-Thing:2005", "Hulk:2003", "Venom:2018",
+                            "Venom: Let There Be Carnage:2021", "Venom: The Last Dance:2024", "Morbius:2022",
+                            "Madame Web:2024", "Kraven the Hunter:2024", "Fantastic Four:2015",
+                            "Daredevil:2015", "Jessica Jones:2015", "Luke Cage:2016", "Iron Fist:2017", "The Punisher:2017",
+                            "The Defenders:2017", "Agents of S.H.I.E.L.D.:2013", "Agent Carter:2015", "Runaways:2017",
+                            "Cloak & Dagger:2018", "Inhumans:2017", "Helstrom:2020", "Spider-Man:1994",
+                            "The Incredible Hulk:1977", "Fantastic Four:1994", "Iron Man:1994", "WandaVision:2021",
+                            "Loki:2021", "The Falcon and the Winter Soldier:2021", "Hawkeye:2021", "Moon Knight:2022",
+                            "Ms. Marvel:2022", "She-Hulk: Attorney at Law:2022", "Secret Invasion:2023", "Echo:2024",
+                            "Agatha All Along:2024", "What If...?:2021", "Daredevil: Born Again:2025", "Ironheart:2025"],
+                 "include": ["spider-man", "xmen"]},
+  "mcu":        {"keywords": ["marvel cinematic universe (mcu)"]},
   "spider-man": {"search": ["Spider-Man"], "keywords": ["spider-man"]},
-  "xmen":       {"search": ["X-Men", "Wolverine", "Deadpool", "Logan", "New Mutants", "Legion", "The Gifted"],
-                 "keywords": ["x-men"], "collections": ["X-Men", "Deadpool"]},
+  "xmen":       {"keywords": ["x-men"], "collections": ["X-Men", "Deadpool", "The Wolverine"], "search": ["X-Men"],
+                 "titles": ["Logan:2017", "The New Mutants:2020", "Legion:2017", "The Gifted:2017", "X-Men:1992",
+                            "X-Men '97:2024", "X-Men: Evolution:2000", "Wolverine and the X-Men:2009",
+                            "Wolverine:2011", "Deadpool:2016", "Deadpool 2:2018", "Deadpool & Wolverine:2024",
+                            "X-Men Origins: Wolverine:2009", "The Wolverine:2013"]},
   "dc":         {"companies": ["DC Comics", "DC Entertainment", "DC Films", "DC Studios", "DC Universe"],
-                 "keywords": ["dc comics", "dc extended universe (dceu)", "based on dc comics", "dc universe (dcu)"]},
-  "batman":     {"search": ["Batman"], "keywords": ["batman"]},
-  "superman":   {"search": ["Superman", "Man of Steel", "Smallville", "Supergirl"], "keywords": ["superman"]},
+                 "keywords": ["dc comics", "dc extended universe (dceu)", "based on dc comics", "dc universe (dcu)"],
+                 "titles": ["Swamp Thing:1982", "Supergirl:1984", "Steel:1997", "Catwoman:2004", "Constantine:2005",
+                            "V for Vendetta:2005", "Watchmen:2009", "Jonah Hex:2010", "Green Lantern:2011",
+                            "Joker:2019", "Joker: Folie à Deux:2024", "Birds of Prey (and the Fantabulous Emancipation of One Harley Quinn):2020",
+                            "Wonder Woman:2017", "Aquaman:2018", "Shazam!:2019", "Suicide Squad:2016",
+                            "The Suicide Squad:2021", "Black Adam:2022", "The Flash:2023", "Blue Beetle:2023",
+                            "Smallville:2001", "Arrow:2012", "The Flash:2014", "Gotham:2014", "Supergirl:2015",
+                            "DC's Legends of Tomorrow:2016", "Titans:2018", "Doom Patrol:2019", "Lucifer:2016",
+                            "Krypton:2018", "Watchmen:2019", "Peacemaker:2022", "The Penguin:2024", "Harley Quinn:2019",
+                            "DC's Stargirl:2020", "Superman & Lois:2021", "Teen Titans:2003", "Batwoman:2019",
+                            "Black Lightning:2018", "Swamp Thing:2019", "Pennyworth:2019", "Wonder Woman:1975",
+                            "Lois & Clark: The New Adventures of Superman:1993", "Justice League:2001",
+                            "Batman: The Animated Series:1992", "Young Justice:2010", "Creature Commandos:2024",
+                            "Lanterns:2026"],
+                 "include": ["batman", "superman"]},
+  "batman":     {"search": ["Batman", "The Batman", "The Dark Knight", "The LEGO Batman"], "keywords": ["batman"],
+                 "titles": ["Batman:1966", "Batman:1989", "Batman Returns:1992", "Batman Forever:1995",
+                            "Batman & Robin:1997", "Batman Begins:2005", "The Dark Knight:2008",
+                            "The Dark Knight Rises:2012", "The Batman:2022", "Batman: Mask of the Phantasm:1993"]},
+  "superman":   {"search": ["Superman", "Man of Steel"], "keywords": ["superman"],
+                 "titles": ["Superman:1978", "Superman II:1980", "Superman III:1983", "Superman IV: The Quest for Peace:1987",
+                            "Superman Returns:2006", "Man of Steel:2013", "Superman:2025"]},
 }
 COMPANY = {}
 def company_ids(names):
@@ -284,32 +321,52 @@ def company_ids(names):
         out += COMPANY[n]
     return out
 
-def fetch_franchise(typ, key, order, maxn):
+SKIP_TV_GENRES = {10763, 10764, 10767, 99}            # news, reality, talk, documentary
+def fetch_franchise(typ, key, order, maxn, _seen=None):
+    _seen = _seen if _seen is not None else set()
+    if key in _seen:
+        return []
+    _seen.add(key)
     f = FRANCHISES[key]
     pool = {}
+    min_votes = 80 if typ == Mv else 15              # title searches drop fan-made / obscure junk
     base = {"include_adult": "false", "sort_by": "popularity.desc", "without_genres": "99"}
     if typ == Mv:
-        base["with_runtime.gte"] = 40                       # skip shorts and one-shots
-    def add(rows, need_name=None):
+        base["with_runtime.gte"] = 40                    # skip shorts and one-shots
+    def ok(r):
+        if set(r.get("genre_ids") or []) & SKIP_TV_GENRES:
+            return False
+        return bool(r.get("release_date") or r.get("first_air_date"))
+    def add(rows, votes=0, name_has=None):
         for r in rows:
-            if need_name and not any(w.lower() in (r.get("title") or r.get("name") or "").lower() for w in need_name):
+            nm = (r.get("title") or r.get("name") or "").lower()
+            if name_has and not nm.startswith(name_has.lower()):
                 continue
-            if 99 in (r.get("genre_ids") or []):
+            if (r.get("vote_count") or 0) < votes or not ok(r):
                 continue
             pool.setdefault(r["id"], r)
     cids = company_ids(f.get("companies", []))
     if cids:
-        add(paged(f"discover/{tt(typ)}", {**base, "with_companies": "|".join(cids)}, maxn))
+        add(paged(f"discover/{tt(typ)}", {**base, "with_companies": "|".join(cids)}, maxn), 3)
     kws = [i for i in (keyword_id(k) for k in f.get("keywords", [])) if i]
     if kws:
-        add(paged(f"discover/{tt(typ)}", {**base, "with_keywords": "|".join(kws)}, maxn))
+        add(paged(f"discover/{tt(typ)}", {**base, "with_keywords": "|".join(kws)}, maxn), 3)
     for q in f.get("search", []):
-        add(paged(f"search/{tt(typ)}", {"query": q}, 100), need_name=[q])
+        add(paged(f"search/{tt(typ)}", {"query": q}, 60), min_votes, name_has=q)
+    for spec in f.get("titles", []):
+        name, _, yr = spec.rpartition(":")
+        res = get(f"search/{tt(typ)}", {"query": name}).get("results") or []
+        add([r for r in res if (r.get("title") or r.get("name") or "").lower() == name.lower()
+             and (r.get("release_date") or r.get("first_air_date") or "").startswith(yr)])
     if typ == Mv:
         for q in f.get("collections", []):
-            for c in (get("search/collection", {"query": q}).get("results") or [])[:3]:
-                add(get(f"collection/{c['id']}").get("parts") or [])
-    rows = [r for r in pool.values() if (r.get("vote_count") or 0) >= 3 or (r.get("release_date") or r.get("first_air_date") or "") > TODAY.isoformat()]
+            for c in (get("search/collection", {"query": q}).get("results") or [])[:2]:
+                if q.lower() in c.get("name", "").lower():
+                    add(get(f"collection/{c['id']}").get("parts") or [])
+    for sub in f.get("include", []):
+        for r in fetch_franchise(typ, sub, "asc", maxn, _seen):
+            pool.setdefault(r["id"], r)
+    rows = list(pool.values())
     date = lambda r: r.get("release_date") or r.get("first_air_date") or "9999"
     if order == "asc":
         rows.sort(key=date)
