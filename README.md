@@ -6,7 +6,7 @@ Install in Nuvio → Add-ons → Install from URL:
 https://sayandp.github.io/nuvio-collections/manifest.json
 ```
 
-**Top:** five catalogs, each with a subcategory filter (below). **Underneath:** the 177 shelves from the previous version: favourites and For You, trending, anime, platform originals, moods, Indian, unlimited and 18+ shelves. Set `INCLUDE_LEGACY = False` in `tools/build_tmdb.py` to keep only the top five. Rebuilt daily from TMDB by a GitHub Action.
+**Top:** five catalogs, each with a subcategory filter (below). **Underneath:** the previous version's shelves (minus any that repeat the top catalogs): favourites and For You, trending, anime, platform originals, moods, Indian, unlimited and 18+ shelves. Set `INCLUDE_LEGACY = False` in `tools/build_tmdb.py` to keep only the top five. Rebuilt daily from TMDB by a GitHub Action.
 
 | Catalog | Subcategories |
 |---|---|
@@ -14,6 +14,12 @@ https://sayandp.github.io/nuvio-collections/manifest.json
 | 🌴 Malayalam Movies | Trending Now, Latest Releases, All Movies, Top Rated, This Year, Thriller, Comedy, Family Drama, Action and Mass, Romance, Horror, 80s and 90s Classics, Mohanlal, Mammootty, Fahadh Faasil, Prithviraj, Dulquer Salmaan |
 | 🎺 Tamil Movies | Trending Now, Latest Releases, All Movies, Top Rated, This Year, Action and Mass, Thriller, Comedy, Romance, Family Drama, Horror, 80s and 90s Classics, Rajinikanth, Vijay, Kamal Haasan, Suriya, Dhanush |
 | 🔞 18+ Movies | Trending 18+, All 18+ Movies, Latest 18+, Top Rated 18+, NC-17 and Uncut, Steamy and Explicit, Erotic Thrillers, Ultra-Violent, Gore and Extreme Horror, Crime and Gangster, Drugs and Excess, Disturbing and Dark, Indian A-Rated |
+| 🦸 Marvel Movies | Release Order, Newest First, MCU Only, Spider-Man, Top Rated |
+| 🦸 Marvel Series | Release Order, Newest First, Top Rated |
+| 🧬 X-Men Movies | Release Order, Newest First |
+| 🧬 X-Men Series | Release Order |
+| 🦇 DC Movies | Release Order, Newest First, Batman, Superman, Top Rated |
+| 🦇 DC Series | Release Order, Newest First, Top Rated |
 | 🔞 18+ Series | Trending 18+, All 18+ Series, Latest 18+, Top Rated 18+, Steamy and Explicit, Brutal and Violent, Crime and Gangster, Fantasy and War Epics, Dark Comedy, Drugs and Excess |
 
 "All …" lists go up to 10,000 titles (TMDB's limit) and load 100 at a time as you scroll.

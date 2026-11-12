@@ -16,7 +16,10 @@ import json, os, random, shutil, sys, time, urllib.parse, urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "imdb_cache.json")
 VERSION = "4.0." + dt.date.today().strftime("%Y%m%d")
-INCLUDE_LEGACY = True          # False = only the top 5 catalogs
+INCLUDE_LEGACY = True
+# legacy shelves already covered by the top catalogs (prefixes or exact ids)
+LEGACY_SKIP = ("ml-", "ta-", "sitcoms-", "nsfw-", "mockumentary", "workplace-comedy", "british-sitcoms",
+               "after-dark-movies", "after-dark-series")          # False = only the top 5 catalogs
 PAGE = 100                     # metas per static page; Nuvio loads more with ?skip=
 MAX = 10000                    # TMDB's hard ceiling per list (500 pages x 20)
 TODAY = dt.date.today()
@@ -127,6 +130,38 @@ GROUPS = [
     ("Dark Comedy",         {**POP, **MA_TV, "with_genres": "35"}, 1500, None),
     ("Drugs & Excess",      {**POP}, 1000, ["drug addiction", "drugs", "drug dealer"]),
  ]),
+ # ---------------- franchises (sorted by release date: "Release Order" is oldest -> newest)
+ ("marvel-movies", Mv, "🦸  Marvel Movies", {}, None, [
+    ("Release Order",   {"_franchise": "marvel", "_order": "asc"}, 2000, None),
+    ("Newest First",    {"_franchise": "marvel", "_order": "desc"}, 2000, None),
+    ("MCU Only",        {"_franchise": "mcu", "_order": "asc"}, 500, None),
+    ("Spider-Man",      {"_franchise": "spider-man", "_order": "asc"}, 300, None),
+    ("Top Rated",       {"_franchise": "marvel", "_order": "rating"}, 2000, None),
+ ]),
+ ("marvel-series", T, "🦸  Marvel Series", {}, None, [
+    ("Release Order",   {"_franchise": "marvel", "_order": "asc"}, 1000, None),
+    ("Newest First",    {"_franchise": "marvel", "_order": "desc"}, 1000, None),
+    ("Top Rated",       {"_franchise": "marvel", "_order": "rating"}, 1000, None),
+ ]),
+ ("xmen-movies", Mv, "🧬  X-Men Movies", {}, None, [
+    ("Release Order",   {"_franchise": "xmen", "_order": "asc"}, 200, None),
+    ("Newest First",    {"_franchise": "xmen", "_order": "desc"}, 200, None),
+ ]),
+ ("xmen-series", T, "🧬  X-Men Series", {}, None, [
+    ("Release Order",   {"_franchise": "xmen", "_order": "asc"}, 200, None),
+ ]),
+ ("dc-movies", Mv, "🦇  DC Movies", {}, None, [
+    ("Release Order",   {"_franchise": "dc", "_order": "asc"}, 2000, None),
+    ("Newest First",    {"_franchise": "dc", "_order": "desc"}, 2000, None),
+    ("Batman",          {"_franchise": "batman", "_order": "asc"}, 300, None),
+    ("Superman",        {"_franchise": "superman", "_order": "asc"}, 200, None),
+    ("Top Rated",       {"_franchise": "dc", "_order": "rating"}, 2000, None),
+ ]),
+ ("dc-series", T, "🦇  DC Series", {}, None, [
+    ("Release Order",   {"_franchise": "dc", "_order": "asc"}, 1000, None),
+    ("Newest First",    {"_franchise": "dc", "_order": "desc"}, 1000, None),
+    ("Top Rated",       {"_franchise": "dc", "_order": "rating"}, 1000, None),
+ ]),
 ]
 
 # ============================================================================
@@ -225,8 +260,70 @@ def to_meta(r, typ):
 # ============================================================================
 # Build
 # ============================================================================
+# Franchise sources: production companies (resolved by exact name), keywords, title searches, collections.
+FRANCHISES = {
+  "marvel":     {"companies": ["Marvel Studios", "Marvel Entertainment", "Marvel Enterprises", "Marvel Television",
+                               "Marvel Animation", "Marvel Knights"],
+                 "keywords": ["marvel comics", "marvel cinematic universe (mcu)", "based on marvel comics"]},
+  "mcu":        {"companies": ["Marvel Studios"], "keywords": ["marvel cinematic universe (mcu)"]},
+  "spider-man": {"search": ["Spider-Man"], "keywords": ["spider-man"]},
+  "xmen":       {"search": ["X-Men", "Wolverine", "Deadpool", "Logan", "New Mutants", "Legion", "The Gifted"],
+                 "keywords": ["x-men"], "collections": ["X-Men", "Deadpool"]},
+  "dc":         {"companies": ["DC Comics", "DC Entertainment", "DC Films", "DC Studios", "DC Universe"],
+                 "keywords": ["dc comics", "dc extended universe (dceu)", "based on dc comics", "dc universe (dcu)"]},
+  "batman":     {"search": ["Batman"], "keywords": ["batman"]},
+  "superman":   {"search": ["Superman", "Man of Steel", "Smallville", "Supergirl"], "keywords": ["superman"]},
+}
+COMPANY = {}
+def company_ids(names):
+    out = []
+    for n in names:
+        if n not in COMPANY:
+            res = get("search/company", {"query": n}).get("results") or []
+            COMPANY[n] = [str(r["id"]) for r in res if r.get("name", "").lower() == n.lower()]
+        out += COMPANY[n]
+    return out
+
+def fetch_franchise(typ, key, order, maxn):
+    f = FRANCHISES[key]
+    pool = {}
+    base = {"include_adult": "false", "sort_by": "popularity.desc", "without_genres": "99"}
+    if typ == Mv:
+        base["with_runtime.gte"] = 40                       # skip shorts and one-shots
+    def add(rows, need_name=None):
+        for r in rows:
+            if need_name and not any(w.lower() in (r.get("title") or r.get("name") or "").lower() for w in need_name):
+                continue
+            if 99 in (r.get("genre_ids") or []):
+                continue
+            pool.setdefault(r["id"], r)
+    cids = company_ids(f.get("companies", []))
+    if cids:
+        add(paged(f"discover/{tt(typ)}", {**base, "with_companies": "|".join(cids)}, maxn))
+    kws = [i for i in (keyword_id(k) for k in f.get("keywords", [])) if i]
+    if kws:
+        add(paged(f"discover/{tt(typ)}", {**base, "with_keywords": "|".join(kws)}, maxn))
+    for q in f.get("search", []):
+        add(paged(f"search/{tt(typ)}", {"query": q}, 100), need_name=[q])
+    if typ == Mv:
+        for q in f.get("collections", []):
+            for c in (get("search/collection", {"query": q}).get("results") or [])[:3]:
+                add(get(f"collection/{c['id']}").get("parts") or [])
+    rows = [r for r in pool.values() if (r.get("vote_count") or 0) >= 3 or (r.get("release_date") or r.get("first_air_date") or "") > TODAY.isoformat()]
+    date = lambda r: r.get("release_date") or r.get("first_air_date") or "9999"
+    if order == "asc":
+        rows.sort(key=date)
+    elif order == "desc":
+        rows.sort(key=date, reverse=True)
+    else:
+        rows = [r for r in rows if (r.get("vote_count") or 0) >= 50]
+        rows.sort(key=lambda r: -(r.get("vote_average") or 0))
+    return rows[:maxn]
+
 def fetch_sub(typ, base, base_kw, sub):
     label, extra, maxn, kws = sub
+    if "_franchise" in extra:
+        return fetch_franchise(typ, extra["_franchise"], extra.get("_order", "asc"), maxn)
     p = {"include_adult": "false", **base, **extra}
     cast = p.pop("_cast", None)
     if cast:
@@ -320,7 +417,7 @@ def build():
                              "extraSupported": ["genre", "skip"]})
 
     for cid, typ, name, metas in legacy:
-        if not metas or any(c["id"] == cid for c in catalogs):
+        if not metas or any(c["id"] == cid for c in catalogs) or cid.startswith(LEGACY_SKIP) or cid in LEGACY_SKIP:
             continue
         write_pages(os.path.join(ROOT, "catalog", typ, cid), "", metas)
         catalogs.append({"type": typ, "id": cid, "name": name, "extra": [{"name": "skip", "isRequired": False}]})
@@ -356,6 +453,11 @@ def _fake_get(path, params=None):
         return {"genres": [{"id": 35, "name": "Comedy"}, {"id": 18, "name": "Drama"}]}
     if path == "search/keyword":
         return {"results": [{"id": abs(hash(params["query"])) % 99999, "name": params["query"]}]}
+    if path in ("search/company", "search/collection"):
+        return {"results": [{"id": 77, "name": params["query"]}]}
+    if path.startswith("collection/"):
+        return {"parts": [{"id": 5000 + i, "title": f"X-Men {i}", "vote_count": 900, "vote_average": 7,
+                           "release_date": f"{2000 + i}-05-01"} for i in range(8)]}
     if path == "search/person":
         return {"results": [{"id": 4242, "name": params["query"], "popularity": 9}]}
     if path.endswith("external_ids"):
@@ -365,7 +467,7 @@ def _fake_get(path, params=None):
         return {"results": [], "total_pages": 0}          # exercise the fallback
     total_pages = 4 if "with_keywords" in params else 30
     res = [{"id": rnd.randint(1, 900000), "name": f"Show {rnd.randint(1, 9999)}", "title": f"Film {rnd.randint(1, 9999)}",
-            "vote_average": round(rnd.uniform(5, 9.3), 1), "first_air_date": "1994-01-01", "release_date": "2001-01-01",
+            "vote_average": round(rnd.uniform(5, 9.3), 1), "vote_count": rnd.randint(0, 5000), "first_air_date": "1994-01-01", "release_date": "2001-01-01",
             "genre_ids": [35], "overview": "x " * 150, "poster_path": "/p.jpg"} for _ in range(20)]
     return {"results": res, "total_pages": total_pages}
 
