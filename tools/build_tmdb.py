@@ -139,9 +139,14 @@ GROUPS = [
     ("Top Rated",       {"_franchise": "marvel", "_order": "rating"}, 2000, None),
  ]),
  ("marvel-series", T, "🦸  Marvel Series", {}, None, [
-    ("Release Order",   {"_franchise": "marvel", "_order": "asc"}, 1000, None),
-    ("Newest First",    {"_franchise": "marvel", "_order": "desc"}, 1000, None),
-    ("Top Rated",       {"_franchise": "marvel", "_order": "rating"}, 1000, None),
+    ("Release Order",          {"_franchise": "marvel", "_order": "asc"}, 1000, None),
+    ("Newest First",           {"_franchise": "marvel", "_order": "desc"}, 1000, None),
+    ("MCU Series",             {"_franchise": "mcu-tv", "_order": "asc"}, 100, None),
+    ("Netflix Defenders Saga", {"_franchise": "marvel-netflix", "_order": "asc"}, 50, None),
+    ("Live-Action",            {"_franchise": "marvel", "_order": "asc", "_live": True}, 500, None),
+    ("Animated",               {"_franchise": "marvel", "_order": "asc", "_genre": 16}, 500, None),
+    ("Spider-Man Series",      {"_franchise": "spider-man", "_order": "asc"}, 100, None),
+    ("Top Rated",              {"_franchise": "marvel", "_order": "rating"}, 1000, None),
  ]),
  ("xmen-movies", Mv, "🧬  X-Men Movies", {}, None, [
     ("Release Order",   {"_franchise": "xmen", "_order": "asc"}, 200, None),
@@ -281,6 +286,14 @@ FRANCHISES = {
                             "Agatha All Along:2024", "What If...?:2021", "Daredevil: Born Again:2025", "Ironheart:2025"],
                  "include": ["spider-man", "xmen"]},
   "mcu":        {"keywords": ["marvel cinematic universe (mcu)"]},
+  "mcu-tv":     {"keywords": ["marvel cinematic universe (mcu)"],
+                 "titles": ["WandaVision:2021", "The Falcon and the Winter Soldier:2021", "Loki:2021", "What If...?:2021",
+                            "Hawkeye:2021", "Moon Knight:2022", "Ms. Marvel:2022", "She-Hulk: Attorney at Law:2022",
+                            "Secret Invasion:2023", "Echo:2024", "Agatha All Along:2024", "Daredevil: Born Again:2025",
+                            "Ironheart:2025", "Your Friendly Neighborhood Spider-Man:2025", "Eyes of Wakanda:2025",
+                            "Marvel Zombies:2025", "Wonder Man:2026", "VisionQuest:2026"]},
+  "marvel-netflix": {"titles": ["Daredevil:2015", "Jessica Jones:2015", "Luke Cage:2016", "Iron Fist:2017",
+                                "The Defenders:2017", "The Punisher:2017"]},
   "spider-man": {"search": ["Spider-Man"], "keywords": ["spider-man"]},
   "xmen":       {"keywords": ["x-men"], "collections": ["X-Men", "Deadpool", "The Wolverine"], "search": ["X-Men"],
                  "titles": ["Logan:2017", "The New Mutants:2020", "Legion:2017", "The Gifted:2017", "X-Men:1992",
@@ -380,7 +393,12 @@ def fetch_franchise(typ, key, order, maxn, _seen=None):
 def fetch_sub(typ, base, base_kw, sub):
     label, extra, maxn, kws = sub
     if "_franchise" in extra:
-        return fetch_franchise(typ, extra["_franchise"], extra.get("_order", "asc"), maxn)
+        rows = fetch_franchise(typ, extra["_franchise"], extra.get("_order", "asc"), 5000)
+        if "_genre" in extra:
+            rows = [r for r in rows if extra["_genre"] in (r.get("genre_ids") or [])]
+        if extra.get("_live"):
+            rows = [r for r in rows if 16 not in (r.get("genre_ids") or [])]
+        return rows[:maxn]
     p = {"include_adult": "false", **base, **extra}
     cast = p.pop("_cast", None)
     if cast:
