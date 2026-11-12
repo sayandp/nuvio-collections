@@ -16,6 +16,7 @@ import json, os, random, shutil, sys, time, urllib.parse, urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "imdb_cache.json")
 VERSION = "4.0." + dt.date.today().strftime("%Y%m%d")
+INCLUDE_LEGACY = True          # False = only the top 5 catalogs
 PAGE = 100                     # metas per static page; Nuvio loads more with ?skip=
 MAX = 10000                    # TMDB's hard ceiling per list (500 pages x 20)
 TODAY = dt.date.today()
@@ -284,6 +285,13 @@ def build():
             results[futs[f]] = f.result()
     imdb_ids({f"{tt(GROUPS[gi][1])}:{r['id']}" for (gi, si), rs in results.items() for r in rs})
 
+    # previous version's shelves go below the top catalogs
+    legacy = []
+    if INCLUDE_LEGACY:
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import legacy_v3
+        legacy = legacy_v3.build_legacy(get, CACHE_D, GENRES)
+
     shutil.rmtree(os.path.join(ROOT, "catalog"), ignore_errors=True)
     catalogs, total, uniq = [], 0, set()
     for gi, (cid, typ, name, base, base_kw, subs) in enumerate(GROUPS):
@@ -311,12 +319,20 @@ def build():
                                        {"name": "skip", "isRequired": False}],
                              "extraSupported": ["genre", "skip"]})
 
+    for cid, typ, name, metas in legacy:
+        if not metas or any(c["id"] == cid for c in catalogs):
+            continue
+        write_pages(os.path.join(ROOT, "catalog", typ, cid), "", metas)
+        catalogs.append({"type": typ, "id": cid, "name": name, "extra": [{"name": "skip", "isRequired": False}]})
+        total += len(metas); uniq |= {m["id"] for m in metas}
+    print(f"  + {sum(1 for x in legacy if x[3])} legacy shelves")
+
     manifest = {
         "id": "com.sayand.nuvio.collections",
         "version": VERSION,
         "name": "Sayand's Collections",
-        "description": "Sitcoms, Malayalam movies, Tamil movies, 18+ movies and 18+ series: each with its own "
-                       "subcategories (trending, latest, all, top rated, eras, genres, stars). Rebuilt daily from TMDB.",
+        "description": "Top: Sitcoms, Malayalam, Tamil, 18+ Movies, 18+ Series with subcategory filters. "
+                       "Below: 170+ shelves (trending, anime, platforms, moods, Indian, recommender). Rebuilt daily from TMDB.",
         "resources": ["catalog"],
         "types": ["movie", "series"],
         "idPrefixes": ["tt"],

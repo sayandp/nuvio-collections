@@ -6,7 +6,7 @@ Install in Nuvio → Add-ons → Install from URL:
 https://sayandp.github.io/nuvio-collections/manifest.json
 ```
 
-Five catalogs, each with a subcategory filter. Rebuilt daily from TMDB by a GitHub Action.
+**Top:** five catalogs, each with a subcategory filter (below). **Underneath:** the 177 shelves from the previous version: favourites and For You, trending, anime, platform originals, moods, Indian, unlimited and 18+ shelves. Set `INCLUDE_LEGACY = False` in `tools/build_tmdb.py` to keep only the top five. Rebuilt daily from TMDB by a GitHub Action.
 
 | Catalog | Subcategories |
 |---|---|
