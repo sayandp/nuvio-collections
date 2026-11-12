@@ -315,6 +315,10 @@
    "genres": [
     "Release Order",
     "Newest First",
+    "MCU Series",
+    "Live-Action",
+    "Animated",
+    "Spider-Man Series",
     "Top Rated"
    ],
    "extra": [
@@ -323,6 +327,10 @@
      "options": [
       "Release Order",
       "Newest First",
+      "MCU Series",
+      "Live-Action",
+      "Animated",
+      "Spider-Man Series",
       "Top Rated"
      ],
      "isRequired": false
