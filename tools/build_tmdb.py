@@ -112,7 +112,7 @@ GROUPS = [
     ("Crime & Gangster",    {**POP, **R_MOV, "with_genres": "80"}, 3000, None),
     ("Drugs & Excess",      {**POP}, 1000, ["drug addiction", "drugs", "cocaine"]),
     ("Disturbing & Dark",   {**POP}, 1000, ["psychopath", "disturbing", "cannibalism"]),
-    ("Indian A-Rated",      {**POP, "certification_country": "IN", "certification": "A"}, 3000, None),
+    ("Indian A-Rated",      {**POP, "certification_country": "IN", "certification": "A", "with_origin_country": "IN"}, 3000, None),
  ]),
  ("adult-series", T, "🔞  18+ Series", {}, None, [
     ("Trending 18+",        {**POP, **MA_TV, "air_date.gte": SINCE(365)}, 500, None),
