@@ -11,7 +11,7 @@ Edit GROUPS below to add / remove subcategories.
 """
 import concurrent.futures as cf
 import datetime as dt
-import json, os, random, shutil, sys, time, urllib.parse, urllib.request
+import json, os, random, re, shutil, sys, time, urllib.parse, urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CACHE = os.path.join(ROOT, "data", "imdb_cache.json")
@@ -217,7 +217,7 @@ def keyword_id(name):
     if name not in KW:
         res = get("search/keyword", {"query": name}).get("results") or []
         exact = [k for k in res if k["name"].lower() == name.lower()]
-        KW[name] = str((exact or res or [{"id": ""}])[0]["id"] or "")
+        KW[name] = str(exact[0]["id"]) if exact else ""     # exact only: a near-miss keyword pulls junk
     return KW[name]
 
 def person_id(spec):
@@ -294,7 +294,14 @@ FRANCHISES = {
                             "Marvel Zombies:2025", "Wonder Man:2026", "VisionQuest:2026"]},
   "marvel-netflix": {"titles": ["Daredevil:2015", "Jessica Jones:2015", "Luke Cage:2016", "Iron Fist:2017",
                                 "The Defenders:2017", "The Punisher:2017"]},
-  "spider-man": {"search": ["Spider-Man"], "keywords": ["spider-man"]},
+  "spider-man": {"search": ["Spider-Man"], "keywords": ["spider-man"],
+                 "titles": ["Spider-Man:2002", "Spider-Man 2:2004", "Spider-Man 3:2007", "The Amazing Spider-Man:2012",
+                            "The Amazing Spider-Man 2:2014", "Spider-Man: Homecoming:2017", "Spider-Man: Far From Home:2019",
+                            "Spider-Man: No Way Home:2021", "Spider-Man: Into the Spider-Verse:2018",
+                            "Spider-Man: Across the Spider-Verse:2023", "Spider-Man: Brand New Day:2026",
+                            "Spider-Man:1967", "Spider-Man:1994", "The Spectacular Spider-Man:2008",
+                            "Ultimate Spider-Man:2012", "Spider-Man Unlimited:1999", "Spider-Man: The New Animated Series:2003",
+                            "Your Friendly Neighborhood Spider-Man:2025", "Spider-Man and His Amazing Friends:1981"]},
   "xmen":       {"keywords": ["x-men"], "collections": ["X-Men", "Deadpool", "The Wolverine"], "search": ["X-Men"],
                  "titles": ["Logan:2017", "The New Mutants:2020", "Legion:2017", "The Gifted:2017", "X-Men:1992",
                             "X-Men '97:2024", "X-Men: Evolution:2000", "Wolverine and the X-Men:2009",
@@ -369,7 +376,8 @@ def fetch_franchise(typ, key, order, maxn, _seen=None):
     for spec in f.get("titles", []):
         name, _, yr = spec.rpartition(":")
         res = get(f"search/{tt(typ)}", {"query": name}).get("results") or []
-        add([r for r in res if (r.get("title") or r.get("name") or "").lower() == name.lower()
+        norm = lambda x: re.sub(r"^(marvel's|dc's)\s+", "", (x or "").lower()).strip()
+        add([r for r in res if norm(r.get("title") or r.get("name")) == norm(name)
              and (r.get("release_date") or r.get("first_air_date") or "").startswith(yr)])
     if typ == Mv:
         for q in f.get("collections", []):
