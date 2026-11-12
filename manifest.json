@@ -276,6 +276,182 @@
    ]
   },
   {
+   "type": "movie",
+   "id": "marvel-movies",
+   "name": "🦸  Marvel Movies",
+   "genres": [
+    "Release Order",
+    "Newest First",
+    "MCU Only",
+    "Spider-Man",
+    "Top Rated"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First",
+      "MCU Only",
+      "Spider-Man",
+      "Top Rated"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ]
+  },
+  {
+   "type": "series",
+   "id": "marvel-series",
+   "name": "🦸  Marvel Series",
+   "genres": [
+    "Release Order",
+    "Newest First",
+    "Top Rated"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First",
+      "Top Rated"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ]
+  },
+  {
+   "type": "movie",
+   "id": "xmen-movies",
+   "name": "🧬  X-Men Movies",
+   "genres": [
+    "Release Order",
+    "Newest First"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ]
+  },
+  {
+   "type": "series",
+   "id": "xmen-series",
+   "name": "🧬  X-Men Series",
+   "genres": [
+    "Release Order"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ]
+  },
+  {
+   "type": "movie",
+   "id": "dc-movies",
+   "name": "🦇  DC Movies",
+   "genres": [
+    "Release Order",
+    "Newest First",
+    "Batman",
+    "Superman",
+    "Top Rated"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First",
+      "Batman",
+      "Superman",
+      "Top Rated"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ]
+  },
+  {
+   "type": "series",
+   "id": "dc-series",
+   "name": "🦇  DC Series",
+   "genres": [
+    "Release Order",
+    "Newest First",
+    "Top Rated"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First",
+      "Top Rated"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ]
+  },
+  {
    "type": "series",
    "id": "fav-series",
    "name": "❤️  𝗠𝘆 𝗙𝗮𝘃𝗼𝘂𝗿𝗶𝘁𝗲 𝗦𝗲𝗿𝗶𝗲𝘀",
@@ -519,270 +695,6 @@
   },
   {
    "type": "movie",
-   "id": "ml-trending",
-   "name": "🌴  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗶𝗻 𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-this-year",
-   "name": "🆕  𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 · 𝗡𝗲𝘄 𝗧𝗵𝗶𝘀 𝗬𝗲𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-all",
-   "name": "🎞️  𝗘𝘃𝗲𝗿𝘆 𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 𝗠𝗼𝘃𝗶𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-best",
-   "name": "🏆  𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-thrillers",
-   "name": "🔎  𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-comedy",
-   "name": "😆  𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 𝗖𝗼𝗺𝗲𝗱𝘆",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-family",
-   "name": "🏡  𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 𝗙𝗮𝗺𝗶𝗹𝘆 𝗗𝗿𝗮𝗺𝗮",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-crime",
-   "name": "🔥  𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 𝗖𝗿𝗶𝗺𝗲 & 𝗠𝗮𝘀𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-80s-90s",
-   "name": "📼  𝗠𝗼𝗹𝗹𝘆𝘄𝗼𝗼𝗱 𝗚𝗼𝗹𝗱𝗲𝗻 𝗘𝗿𝗮 · 𝟴𝟬𝘀 & 𝟵𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "ml-series",
-   "name": "📺  𝗠𝗮𝗹𝗮𝘆𝗮𝗹𝗮𝗺 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-mohanlal",
-   "name": "🦁  𝗠𝗼𝗵𝗮𝗻𝗹𝗮𝗹 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-mammootty",
-   "name": "👑  𝗠𝗮𝗺𝗺𝗼𝗼𝘁𝘁𝘆 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-fahadh",
-   "name": "🎭  𝗙𝗮𝗵𝗮𝗱𝗵 𝗙𝗮𝗮𝘀𝗶𝗹 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-prithviraj",
-   "name": "⚡  𝗣𝗿𝗶𝘁𝗵𝘃𝗶𝗿𝗮𝗷 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ml-dulquer",
-   "name": "🌟  𝗗𝘂𝗹𝗾𝘂𝗲𝗿 𝗦𝗮𝗹𝗺𝗮𝗮𝗻 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-trending",
-   "name": "🎺  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗶𝗻 𝗧𝗮𝗺𝗶𝗹",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-all",
-   "name": "🎞️  𝗘𝘃𝗲𝗿𝘆 𝗧𝗮𝗺𝗶𝗹 𝗠𝗼𝘃𝗶𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-best",
-   "name": "🏆  𝗧𝗮𝗺𝗶𝗹 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-action",
-   "name": "💥  𝗧𝗮𝗺𝗶𝗹 𝗠𝗮𝘀𝘀 & 𝗔𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-thrillers",
-   "name": "🔎  𝗧𝗮𝗺𝗶𝗹 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-rajini",
-   "name": "😎  𝗥𝗮𝗷𝗶𝗻𝗶𝗸𝗮𝗻𝘁𝗵 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-vijay",
-   "name": "🦅  𝗩𝗶𝗷𝗮𝘆 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ta-kamal",
-   "name": "🎬  𝗞𝗮𝗺𝗮𝗹 𝗛𝗮𝗮𝘀𝗮𝗻 𝗖𝗼𝗹𝗹𝗲𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "ta-series",
-   "name": "📺  𝗧𝗮𝗺𝗶𝗹 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
    "id": "hi-trending",
    "name": "🪔  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗶𝗻 𝗛𝗶𝗻𝗱𝗶",
    "extra": [
@@ -873,149 +785,6 @@
    "type": "series",
    "id": "india-crime-series",
    "name": "🕵️  𝗜𝗻𝗱𝗶𝗮𝗻 𝗖𝗿𝗶𝗺𝗲 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-all",
-   "name": "😂  𝗘𝘃𝗲𝗿𝘆 𝗦𝗶𝘁𝗰𝗼𝗺 𝗘𝘃𝗲𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-top",
-   "name": "👑  𝗚𝗿𝗲𝗮𝘁𝗲𝘀𝘁 𝗦𝗶𝘁𝗰𝗼𝗺𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-60s",
-   "name": "📻  𝗦𝗶𝘁𝗰𝗼𝗺𝘀 · 𝗧𝗵𝗲 𝟲𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-70s",
-   "name": "🕺  𝗦𝗶𝘁𝗰𝗼𝗺𝘀 · 𝗧𝗵𝗲 𝟳𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-80s",
-   "name": "📼  𝗦𝗶𝘁𝗰𝗼𝗺𝘀 · 𝗧𝗵𝗲 𝟴𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-90s",
-   "name": "☕  𝗦𝗶𝘁𝗰𝗼𝗺𝘀 · 𝗧𝗵𝗲 𝟵𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-00s",
-   "name": "📀  𝗦𝗶𝘁𝗰𝗼𝗺𝘀 · 𝗧𝗵𝗲 𝟮𝟬𝟬𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-10s",
-   "name": "📱  𝗦𝗶𝘁𝗰𝗼𝗺𝘀 · 𝗧𝗵𝗲 𝟮𝟬𝟭𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-20s",
-   "name": "✨  𝗦𝗶𝘁𝗰𝗼𝗺𝘀 · 𝗧𝗵𝗲 𝟮𝟬𝟮𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "sitcoms-animated",
-   "name": "🍩  𝗔𝗻𝗶𝗺𝗮𝘁𝗲𝗱 𝗦𝗶𝘁𝗰𝗼𝗺𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "mockumentary",
-   "name": "🎥  𝗠𝗼𝗰𝗸𝘂𝗺𝗲𝗻𝘁𝗮𝗿𝘆 𝗖𝗼𝗺𝗲𝗱𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "workplace-comedy",
-   "name": "💼  𝗪𝗼𝗿𝗸𝗽𝗹𝗮𝗰𝗲 𝗖𝗼𝗺𝗲𝗱𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "british-sitcoms",
-   "name": "☂️  𝗕𝗿𝗶𝘁𝗶𝘀𝗵 𝗦𝗶𝘁𝗰𝗼𝗺𝘀",
    "extra": [
     {
      "name": "skip",
@@ -1751,17 +1520,6 @@
   },
   {
    "type": "movie",
-   "id": "after-dark-movies",
-   "name": "🔞  𝗔𝗳𝘁𝗲𝗿 𝗗𝗮𝗿𝗸 · 𝗥-𝗥𝗮𝘁𝗲𝗱 𝗛𝗶𝘁𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
    "id": "movies-all",
    "name": "♾️  𝗘𝘃𝗲𝗿𝘆 𝗠𝗼𝘃𝗶𝗲 · 𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿",
    "extra": [
@@ -2083,138 +1841,6 @@
    "type": "series",
    "id": "cartoons",
    "name": "🐭  𝗖𝗮𝗿𝘁𝗼𝗼𝗻𝘀 (𝗡𝗼𝗻-𝗔𝗻𝗶𝗺𝗲)",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-r-all",
-   "name": "🔞  𝟭𝟴+ · 𝗘𝘃𝗲𝗿𝘆 𝗥-𝗥𝗮𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "after-dark-series",
-   "name": "🔞  𝗔𝗳𝘁𝗲𝗿 𝗗𝗮𝗿𝗸 · 𝟭𝟴+ 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-nc17",
-   "name": "⛔  𝟭𝟴+ · 𝗡𝗖-𝟭𝟳 & 𝗨𝗻𝗰𝘂𝘁",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-erotic",
-   "name": "💋  𝟭𝟴+ · 𝗘𝗿𝗼𝘁𝗶𝗰 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-nudity-mov",
-   "name": "🌶️  𝟭𝟴+ · 𝗦𝘁𝗲𝗮𝗺𝘆 & 𝗘𝘅𝗽𝗹𝗶𝗰𝗶𝘁 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "nsfw-nudity-tv",
-   "name": "🌶️  𝟭𝟴+ · 𝗦𝘁𝗲𝗮𝗺𝘆 & 𝗘𝘅𝗽𝗹𝗶𝗰𝗶𝘁 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-gore",
-   "name": "🩸  𝟭𝟴+ · 𝗚𝗼𝗿𝗲 & 𝗘𝘅𝘁𝗿𝗲𝗺𝗲 𝗛𝗼𝗿𝗿𝗼𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-violent",
-   "name": "🪓  𝟭𝟴+ · 𝗕𝗿𝘂𝘁𝗮𝗹 & 𝗨𝗹𝘁𝗿𝗮-𝗩𝗶𝗼𝗹𝗲𝗻𝘁",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "nsfw-violent-tv",
-   "name": "🪓  𝟭𝟴+ · 𝗕𝗿𝘂𝘁𝗮𝗹 & 𝗩𝗶𝗼𝗹𝗲𝗻𝘁 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-drugs",
-   "name": "💊  𝟭𝟴+ · 𝗗𝗿𝘂𝗴𝘀 & 𝗘𝘅𝗰𝗲𝘀𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-dark-psych",
-   "name": "🕳️  𝟭𝟴+ · 𝗗𝗶𝘀𝘁𝘂𝗿𝗯𝗶𝗻𝗴 & 𝗗𝗮𝗿𝗸",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "nsfw-ml-a",
-   "name": "🅰️  𝟭𝟴+ · 𝗜𝗻𝗱𝗶𝗮𝗻 𝗔-𝗥𝗮𝘁𝗲𝗱",
    "extra": [
     {
      "name": "skip",
