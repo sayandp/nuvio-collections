@@ -83,6 +83,10 @@ GROUPS = [
     ("Fahadh Faasil",   {**POP, "_cast": "Fahadh Faasil"}, 200, None),
     ("Prithviraj",      {**POP, "_cast": "Prithviraj Sukumaran"}, 200, None),
     ("Dulquer Salmaan", {**POP, "_cast": "Dulquer Salmaan"}, 150, None),
+    ("Tovino Thomas",   {**POP, "_cast": "Tovino Thomas"}, 150, None),
+    ("Basil Joseph",    {**POP, "_cast": "Basil Joseph"}, 100, None),
+    ("New on OTT",      {"sort_by": "primary_release_date.desc", "region": "IN", "with_release_type": "4",
+                         "release_date.gte": SINCE(150), "release_date.lte": NOW}, 200, None),
  ]),
  ("tamil", Mv, "🎺  Tamil Movies", TA, None, [
     ("Trending Now",    {**POP, "primary_release_date.gte": SINCE(150)}, 300, None),
@@ -102,6 +106,7 @@ GROUPS = [
     ("Kamal Haasan",    {**POP, "_cast": "Kamal Haasan"}, 300, None),
     ("Suriya",          {**POP, "_cast": "Suriya"}, 100, None),
     ("Dhanush",         {**POP, "_cast": "Dhanush"}, 100, None),
+    ("Lokesh Cinematic Universe", {"_franchise": "lcu", "_order": "asc"}, 30, None),
  ]),
  ("adult-movies", Mv, "🔞  18+ Movies", {}, None, [
     ("Trending 18+",        {**POP, **R_MOV, "primary_release_date.gte": SINCE(365)}, 500, None),
@@ -167,7 +172,80 @@ GROUPS = [
     ("Newest First",    {"_franchise": "dc", "_order": "desc"}, 1000, None),
     ("Top Rated",       {"_franchise": "dc", "_order": "rating"}, 1000, None),
  ]),
+ # ---------------- big movie universes (release order)
+ ("franchises", Mv, "🌌  Movie Universes", {}, None, [
+    ("Star Wars",                    {"_franchise": "star-wars", "_order": "asc"}, 100, None),
+    ("Harry Potter & Wizarding World", {"_franchise": "wizarding", "_order": "asc"}, 100, None),
+    ("James Bond 007",               {"_franchise": "bond", "_order": "asc"}, 100, None),
+    ("Fast & Furious",               {"_franchise": "fast", "_order": "asc"}, 100, None),
+    ("Mission: Impossible",          {"_franchise": "mi", "_order": "asc"}, 100, None),
+    ("Jurassic World",               {"_franchise": "jurassic", "_order": "asc"}, 100, None),
+    ("Pixar",                        {"_franchise": "pixar", "_order": "desc"}, 200, None),
+ ]),
+ # ---------------- directors (films they directed, newest first)
+ ("directors", Mv, "🎬  Directors", {}, None, [
+    ("Christopher Nolan",    {"_director": "Christopher Nolan"}, 60, None),
+    ("Denis Villeneuve",     {"_director": "Denis Villeneuve"}, 60, None),
+    ("Quentin Tarantino",    {"_director": "Quentin Tarantino"}, 60, None),
+    ("David Fincher",        {"_director": "David Fincher"}, 60, None),
+    ("Martin Scorsese",      {"_director": "Martin Scorsese"}, 80, None),
+    ("Steven Spielberg",     {"_director": "Steven Spielberg"}, 80, None),
+    ("Bong Joon Ho",         {"_director": "Bong Joon Ho"}, 40, None),
+    ("Hayao Miyazaki",       {"_director": "Hayao Miyazaki"}, 40, None),
+    ("Lijo Jose Pellissery", {"_director": "Lijo Jose Pellissery"}, 40, None),
+    ("Jeethu Joseph",        {"_director": "Jeethu Joseph"}, 60, None),
+    ("Mani Ratnam",          {"_director": "Mani Ratnam"}, 60, None),
+    ("Lokesh Kanagaraj",     {"_director": "Lokesh Kanagaraj"}, 30, None),
+    ("S. S. Rajamouli",      {"_director": "S. S. Rajamouli"}, 30, None),
+ ]),
+ # ---------------- the best of the best
+ ("best-of", Mv, "🏅  Best Of", {}, None, [
+    ("Top 250",                  {**RATED(4000)}, 250, None),
+    ("Oscar Best Picture",       {"_franchise": "oscars", "_order": "desc"}, 100, None),
+    ("Best of the 2010s",        {**RATED(1500), **dec(2010, 2019, "primary_release_date")}, 500, None),
+    ("Best of the 2020s",        {**RATED(800), **dec(2020, TODAY.year, "primary_release_date")}, 500, None),
+ ]),
 ]
+
+# ============================================================================
+# SECTIONS: how the catalogs are grouped (and ordered) in apps that read it (SP4 TV).
+# Nuvio / Stremio ignore the extra "section" field and just see the catalogs in this order.
+# Catalogs not listed go to "More" (before 18+).
+# ============================================================================
+SECTIONS = [
+ ("for-you",   "🎯 For You", ["fav-series", "fav-movies", "for-you-series", "for-you-movies", "because-breaking-bad", "because-game-of-thrones",
+                             "because-friends", "because-the-office", "because-dark", "because-interstellar", "because-inception", "because-the-dark-knight"]),
+ ("trending",  "🔥 Trending & New", ["trending-movies-day", "trending-series-day", "trending-movies-week", "trending-series-week", "ott-new",
+                             "now-playing", "airing-this-week", "popular-movies", "popular-series"]),
+ ("malayalam", "🌴 Malayalam", ["malayalam"]),
+ ("tamil",     "🎺 Tamil", ["tamil"]),
+ ("indian",    "🇮🇳 More Indian", ["pan-india", "hi-trending", "hi-best", "hi-all", "te-trending", "te-best", "kn-best"]),
+ ("indian-tv", "📺 Indian Series", ["india-series-pop", "india-series-best", "india-crime-series", "india-comedy-series"]),
+ ("comedy",    "😂 Sitcoms & Comedy", ["sitcoms", "comedy-movies", "dark-comedy-tv", "adult-animation", "adult-swim"]),
+ ("anime",     "🌸 Anime", ["anime-popular", "anime-airing", "anime-top", "anime-movies", "anime-shounen", "anime-isekai", "anime-mecha", "anime-seinen", "ghibli"]),
+ ("originals", "🟥 Streaming Originals", ["netflix", "prime", "hbo", "max", "apple", "disney", "hulu", "fx", "amc", "bbc"]),
+ ("universes", "🦸 Universes & Franchises", ["marvel-movies", "marvel-series", "dc-movies", "dc-series", "xmen-movies", "xmen-series", "franchises",
+                             "superhero-mov", "superhero-tv"]),
+ ("directors", "🎬 Directors", ["directors"]),
+ ("moods",     "🧠 Moods", ["mind-bending", "thriller", "psych-thriller", "feel-good", "romance", "revenge", "quick-watch", "binge-worthy",
+                             "hidden-gem-movies", "hidden-gem-series"]),
+ ("movie-genres", "🎞️ Movie Genres", ["action", "crime-movies", "mystery-movies", "scifi-movies", "fantasy-movies", "adventure", "war-movies",
+                             "westerns", "musicals", "biopics", "courtroom", "documentaries"]),
+ ("series-genres", "📺 Series Genres", ["crime-series", "scifi-fantasy-tv", "mystery-series", "war-politics-tv", "docuseries", "true-crime-tv",
+                             "k-drama", "teen-drama", "medical-drama", "legal-drama", "miniseries"]),
+ ("themes",    "🪐 Themes & Worlds", ["time-travel-mov", "time-travel-tv", "space", "dystopia", "cyberpunk", "ai-robots", "aliens", "post-apoc-tv",
+                             "zombies", "heist", "spy", "gangster", "martial-arts", "survival", "disaster", "road-trip", "true-story",
+                             "serial-killer", "cult-classics", "coming-of-age", "sports-movies"]),
+ ("horror",    "👻 Horror Corner", ["horror", "haunted", "slashers", "found-footage", "vampires"]),
+ ("decades",   "📼 Best Of & Decades", ["best-of", "movies-this-year", "movies-last-year", "movies-00s", "movies-90s", "movies-80s",
+                             "top-rated-movies", "top-rated-series", "movies-top-5000", "movies-all", "series-all"]),
+ ("family",    "🧸 Family & Seasonal", ["family-animation", "kids-tv", "cartoons", "christmas"]),
+ ("more",      "➕ More", []),
+ ("adult",     "🔞 18+", ["adult-movies", "adult-series"]),
+]
+# the rows apps show on Home (the rest are on the Collections page)
+HOME = ["malayalam", "for-you-movies", "for-you-series", "trending-movies-week", "tamil", "sitcoms", "ott-new",
+        "marvel-movies", "mind-bending", "anime-popular", "netflix"]
 
 # ============================================================================
 # TMDB client
@@ -331,6 +409,25 @@ FRANCHISES = {
                  "titles": ["Superman:1978", "Superman II:1980", "Superman III:1983", "Superman IV: The Quest for Peace:1987",
                             "Superman Returns:2006", "Man of Steel:2013", "Superman:2025"]},
 }
+FRANCHISES.update({
+  "star-wars": {"collections": ["Star Wars"], "titles": ["Rogue One: A Star Wars Story:2016", "Solo: A Star Wars Story:2018"]},
+  "wizarding": {"collections": ["Harry Potter", "Fantastic Beasts"]},
+  "bond":      {"collections": ["James Bond"]},
+  "fast":      {"collections": ["Fast and the Furious", "Fast & Furious"], "titles": ["Fast & Furious Presents: Hobbs & Shaw:2019"]},
+  "mi":        {"collections": ["Mission: Impossible"]},
+  "jurassic":  {"collections": ["Jurassic Park"]},
+  "pixar":     {"companies": ["Pixar"]},
+  "lcu":       {"titles": ["Kaithi:2019", "Vikram:2022", "Leo:2023"]},
+  "oscars":    {"titles": ["Anora:2024", "Oppenheimer:2023", "Everything Everywhere All at Once:2022", "CODA:2021", "Nomadland:2020",
+                           "Parasite:2019", "Green Book:2018", "The Shape of Water:2017", "Moonlight:2016", "Spotlight:2015",
+                           "Birdman or (The Unexpected Virtue of Ignorance):2014", "12 Years a Slave:2013", "Argo:2012", "The Artist:2011",
+                           "The King's Speech:2010", "The Hurt Locker:2008", "Slumdog Millionaire:2008", "No Country for Old Men:2007",
+                           "The Departed:2006", "Crash:2005", "Million Dollar Baby:2004", "The Lord of the Rings: The Return of the King:2003",
+                           "Chicago:2002", "A Beautiful Mind:2001", "Gladiator:2000", "American Beauty:1999", "Shakespeare in Love:1998",
+                           "Titanic:1997", "The English Patient:1996", "Braveheart:1995", "Forrest Gump:1994", "Schindler's List:1993",
+                           "Unforgiven:1992", "The Silence of the Lambs:1991", "Dances with Wolves:1990", "The Godfather:1972",
+                           "The Godfather Part II:1974", "Casablanca:1942", "Lawrence of Arabia:1962", "Amadeus:1984", "Rocky:1976"]},
+})
 COMPANY = {}
 def company_ids(names):
     out = []
@@ -377,8 +474,10 @@ def fetch_franchise(typ, key, order, maxn, _seen=None):
         name, _, yr = spec.rpartition(":")
         res = get(f"search/{tt(typ)}", {"query": name}).get("results") or []
         norm = lambda x: re.sub(r"^(marvel's|dc's)\s+", "", (x or "").lower()).strip()
-        add([r for r in res if norm(r.get("title") or r.get("name")) == norm(name)
-             and (r.get("release_date") or r.get("first_air_date") or "").startswith(yr)])
+        def near(r):                                     # festival vs. cinema release: a year either way
+            d = (r.get("release_date") or r.get("first_air_date") or "")[:4]
+            return d.isdigit() and yr.isdigit() and abs(int(d) - int(yr)) <= 1
+        add([r for r in res if norm(r.get("title") or r.get("name")) == norm(name) and near(r)][:1])
     if typ == Mv:
         for q in f.get("collections", []):
             for c in (get("search/collection", {"query": q}).get("results") or [])[:2]:
@@ -406,6 +505,17 @@ def fetch_sub(typ, base, base_kw, sub):
             rows = [r for r in rows if extra["_genre"] in (r.get("genre_ids") or [])]
         if extra.get("_live"):
             rows = [r for r in rows if 16 not in (r.get("genre_ids") or [])]
+        return rows[:maxn]
+    if "_director" in extra:
+        pid = person_id(extra["_director"])
+        if not pid:
+            return []
+        crew = get(f"person/{pid}/movie_credits").get("crew") or []
+        rows, seen = [], set()
+        for r in crew:
+            if r.get("job") == "Director" and r.get("release_date") and r["id"] not in seen and 99 not in (r.get("genre_ids") or []):
+                seen.add(r["id"]); rows.append(r)
+        rows.sort(key=lambda r: r.get("release_date") or "", reverse=True)
         return rows[:maxn]
     p = {"include_adult": "false", **base, **extra}
     cast = p.pop("_cast", None)
@@ -507,16 +617,31 @@ def build():
         total += len(metas); uniq |= {m["id"] for m in metas}
     print(f"  + {sum(1 for x in legacy if x[3])} legacy shelves")
 
+    # sections: order the catalogs by section and tag each one (apps that don't know the tag ignore it)
+    where = {cid: si for si, (_, _, ids) in enumerate(SECTIONS) for cid in ids}
+    more_i = next(i for i, x in enumerate(SECTIONS) if x[0] == "more")
+    pos = {cid: k for _, _, ids in SECTIONS for k, cid in enumerate(ids)}
+    for c in catalogs:
+        si = where.get(c["id"], more_i)
+        c["section"] = SECTIONS[si][1]
+        if c["id"] in HOME:
+            c["home"] = True
+    catalogs.sort(key=lambda c: (where.get(c["id"], more_i), pos.get(c["id"], 999)))
+    sections = [{"id": sid, "name": nm, "catalogs": [c["id"] for c in catalogs if c["section"] == nm]} for sid, nm, _ in SECTIONS]
+    sections = [x for x in sections if x["catalogs"]]
+    print(f"  {len(sections)} sections: " + ", ".join(f"{x['name']} ({len(x['catalogs'])})" for x in sections))
+
     manifest = {
         "id": "com.sayand.nuvio.collections",
         "version": VERSION,
         "name": "Sayand's Collections",
-        "description": "Top: Sitcoms, Malayalam, Tamil, 18+ Movies, 18+ Series with subcategory filters. "
-                       "Below: 170+ shelves (trending, anime, platforms, moods, Indian, recommender). Rebuilt daily from TMDB.",
+        "description": "19 sections, 150+ catalogs: For You, Trending, Malayalam, Tamil, Indian, Sitcoms, Anime, Streaming Originals, "
+                       "Universes, Directors, Moods, Genres, Themes, Horror, Best Of, Family. Rebuilt daily from TMDB.",
         "resources": ["catalog"],
         "types": ["movie", "series"],
         "idPrefixes": ["tt"],
         "catalogs": catalogs,
+        "sections": sections,
         "behaviorHints": {"configurable": False, "adult": False},
     }
     with open(os.path.join(ROOT, "manifest.json"), "w", encoding="utf-8") as f:
