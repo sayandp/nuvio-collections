@@ -60,6 +60,10 @@ CATALOGS = [
   ("top-rated-movies",     Mv, "All-Time Top Rated Movies", "🏆", "list:movie/top_rated", {}, 500),
   ("now-playing",          Mv, "Fresh From Theatres",       "🎟️", "list:movie/now_playing", {}, 100),
   ("airing-this-week",     T,  "New Episodes This Week",    "📺", "list:tv/on_the_air", {}, 200),
+  ("ott-new",              Mv, "Just Landed on OTT",        "📲", "discover", {"sort_by": "popularity.desc", "region": "IN", "with_release_type": "4",
+                                                                               "release_date.gte": SINCE(60), "release_date.lte": TODAY.isoformat()}, 200),
+  ("pan-india",            Mv, "Pan-India Blockbusters",    "💥", "discover", {"sort_by": "revenue.desc", "with_origin_country": "IN", "vote_count.gte": 20}, 300),
+  ("india-comedy-series",  T,  "Indian Comedy Web Series",  "😄", "discover", {**POP, "with_origin_country": "IN", "with_genres": "35"}, 300),
 
   # ---------------- India: Malayalam, Tamil, Hindi, Telugu, Kannada
   ("ml-trending",     Mv, "Trending in Malayalam",        "🌴", "discover", {**POP, "with_original_language": "ml", "primary_release_date.gte": SINCE(150)}, 200),
