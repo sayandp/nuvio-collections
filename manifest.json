@@ -2,7 +2,7 @@
  "id": "com.sayand.nuvio.collections",
  "version": "4.0.20261119",
  "name": "Sayand's Collections",
- "description": "Top: Sitcoms, Malayalam, Tamil, 18+ Movies, 18+ Series with subcategory filters. Below: 170+ shelves (trending, anime, platforms, moods, Indian, recommender). Rebuilt daily from TMDB.",
+ "description": "19 sections, 150+ catalogs: For You, Trending, Malayalam, Tamil, Indian, Sitcoms, Anime, Streaming Originals, Universes, Directors, Moods, Genres, Themes, Horror, Best Of, Family. Rebuilt daily from TMDB.",
  "resources": [
   "catalog"
  ],
@@ -14,6 +14,520 @@
   "tt"
  ],
  "catalogs": [
+  {
+   "type": "series",
+   "id": "fav-series",
+   "name": "❤️  𝗠𝘆 𝗙𝗮𝘃𝗼𝘂𝗿𝗶𝘁𝗲 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "movie",
+   "id": "fav-movies",
+   "name": "❤️  𝗠𝘆 𝗙𝗮𝘃𝗼𝘂𝗿𝗶𝘁𝗲 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "series",
+   "id": "for-you-series",
+   "name": "🎯  𝗙𝗼𝗿 𝗬𝗼𝘂 · 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You",
+   "home": true
+  },
+  {
+   "type": "movie",
+   "id": "for-you-movies",
+   "name": "🎯  𝗙𝗼𝗿 𝗬𝗼𝘂 · 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You",
+   "home": true
+  },
+  {
+   "type": "series",
+   "id": "because-breaking-bad",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗕𝗿𝗲𝗮𝗸𝗶𝗻𝗴 𝗕𝗮𝗱",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "series",
+   "id": "because-game-of-thrones",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗚𝗮𝗺𝗲 𝗼𝗳 𝗧𝗵𝗿𝗼𝗻𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "series",
+   "id": "because-friends",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗙𝗿𝗶𝗲𝗻𝗱𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "series",
+   "id": "because-the-office",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗧𝗵𝗲 𝗢𝗳𝗳𝗶𝗰𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "series",
+   "id": "because-dark",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗗𝗮𝗿𝗸",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "movie",
+   "id": "because-interstellar",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗜𝗻𝘁𝗲𝗿𝘀𝘁𝗲𝗹𝗹𝗮𝗿",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "movie",
+   "id": "because-inception",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗜𝗻𝗰𝗲𝗽𝘁𝗶𝗼𝗻",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "movie",
+   "id": "because-the-dark-knight",
+   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗧𝗵𝗲 𝗗𝗮𝗿𝗸 𝗞𝗻𝗶𝗴𝗵𝘁",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎯 For You"
+  },
+  {
+   "type": "movie",
+   "id": "trending-movies-day",
+   "name": "🔥  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗼𝗱𝗮𝘆 · 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New"
+  },
+  {
+   "type": "series",
+   "id": "trending-series-day",
+   "name": "🔥  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗼𝗱𝗮𝘆 · 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New"
+  },
+  {
+   "type": "movie",
+   "id": "trending-movies-week",
+   "name": "📈  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗵𝗶𝘀 𝗪𝗲𝗲𝗸 · 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New",
+   "home": true
+  },
+  {
+   "type": "series",
+   "id": "trending-series-week",
+   "name": "📈  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗵𝗶𝘀 𝗪𝗲𝗲𝗸 · 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New"
+  },
+  {
+   "type": "movie",
+   "id": "ott-new",
+   "name": "📲  𝗝𝘂𝘀𝘁 𝗟𝗮𝗻𝗱𝗲𝗱 𝗼𝗻 𝗢𝗧𝗧",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New",
+   "home": true
+  },
+  {
+   "type": "movie",
+   "id": "now-playing",
+   "name": "🎟️  𝗙𝗿𝗲𝘀𝗵 𝗙𝗿𝗼𝗺 𝗧𝗵𝗲𝗮𝘁𝗿𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New"
+  },
+  {
+   "type": "series",
+   "id": "airing-this-week",
+   "name": "📺  𝗡𝗲𝘄 𝗘𝗽𝗶𝘀𝗼𝗱𝗲𝘀 𝗧𝗵𝗶𝘀 𝗪𝗲𝗲𝗸",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New"
+  },
+  {
+   "type": "movie",
+   "id": "popular-movies",
+   "name": "⭐  𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New"
+  },
+  {
+   "type": "series",
+   "id": "popular-series",
+   "name": "⭐  𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🔥 Trending & New"
+  },
+  {
+   "type": "movie",
+   "id": "malayalam",
+   "name": "🌴  Malayalam Movies",
+   "genres": [
+    "Trending Now",
+    "Latest Releases",
+    "All Movies",
+    "Top Rated",
+    "This Year",
+    "Thriller",
+    "Comedy",
+    "Family Drama",
+    "Action and Mass",
+    "Romance",
+    "Horror",
+    "80s and 90s Classics",
+    "Mohanlal",
+    "Mammootty",
+    "Fahadh Faasil",
+    "Prithviraj",
+    "Dulquer Salmaan",
+    "Tovino Thomas",
+    "Basil Joseph",
+    "New on OTT"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Trending Now",
+      "Latest Releases",
+      "All Movies",
+      "Top Rated",
+      "This Year",
+      "Thriller",
+      "Comedy",
+      "Family Drama",
+      "Action and Mass",
+      "Romance",
+      "Horror",
+      "80s and 90s Classics",
+      "Mohanlal",
+      "Mammootty",
+      "Fahadh Faasil",
+      "Prithviraj",
+      "Dulquer Salmaan",
+      "Tovino Thomas",
+      "Basil Joseph",
+      "New on OTT"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🌴 Malayalam",
+   "home": true
+  },
+  {
+   "type": "movie",
+   "id": "tamil",
+   "name": "🎺  Tamil Movies",
+   "genres": [
+    "Trending Now",
+    "Latest Releases",
+    "All Movies",
+    "Top Rated",
+    "This Year",
+    "Action and Mass",
+    "Thriller",
+    "Comedy",
+    "Romance",
+    "Family Drama",
+    "Horror",
+    "80s and 90s Classics",
+    "Rajinikanth",
+    "Vijay",
+    "Kamal Haasan",
+    "Suriya",
+    "Dhanush",
+    "Lokesh Cinematic Universe"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Trending Now",
+      "Latest Releases",
+      "All Movies",
+      "Top Rated",
+      "This Year",
+      "Action and Mass",
+      "Thriller",
+      "Comedy",
+      "Romance",
+      "Family Drama",
+      "Horror",
+      "80s and 90s Classics",
+      "Rajinikanth",
+      "Vijay",
+      "Kamal Haasan",
+      "Suriya",
+      "Dhanush",
+      "Lokesh Cinematic Universe"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🎺 Tamil",
+   "home": true
+  },
+  {
+   "type": "movie",
+   "id": "pan-india",
+   "name": "💥  𝗣𝗮𝗻-𝗜𝗻𝗱𝗶𝗮 𝗕𝗹𝗼𝗰𝗸𝗯𝘂𝘀𝘁𝗲𝗿𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🇮🇳 More Indian"
+  },
+  {
+   "type": "movie",
+   "id": "hi-trending",
+   "name": "🪔  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗶𝗻 𝗛𝗶𝗻𝗱𝗶",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🇮🇳 More Indian"
+  },
+  {
+   "type": "movie",
+   "id": "hi-best",
+   "name": "🏆  𝗕𝗼𝗹𝗹𝘆𝘄𝗼𝗼𝗱 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🇮🇳 More Indian"
+  },
+  {
+   "type": "movie",
+   "id": "hi-all",
+   "name": "🎞️  𝗘𝘃𝗲𝗿𝘆 𝗛𝗶𝗻𝗱𝗶 𝗠𝗼𝘃𝗶𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🇮🇳 More Indian"
+  },
+  {
+   "type": "movie",
+   "id": "te-trending",
+   "name": "🌶️  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗶𝗻 𝗧𝗲𝗹𝘂𝗴𝘂",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🇮🇳 More Indian"
+  },
+  {
+   "type": "movie",
+   "id": "te-best",
+   "name": "🏆  𝗧𝗲𝗹𝘂𝗴𝘂 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🇮🇳 More Indian"
+  },
+  {
+   "type": "movie",
+   "id": "kn-best",
+   "name": "🏆  𝗞𝗮𝗻𝗻𝗮𝗱𝗮 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🇮🇳 More Indian"
+  },
+  {
+   "type": "series",
+   "id": "india-series-pop",
+   "name": "📈  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗜𝗻𝗱𝗶𝗮𝗻 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Indian Series"
+  },
+  {
+   "type": "series",
+   "id": "india-series-best",
+   "name": "🇮🇳  𝗕𝗲𝘀𝘁 𝗜𝗻𝗱𝗶𝗮𝗻 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Indian Series"
+  },
+  {
+   "type": "series",
+   "id": "india-crime-series",
+   "name": "🕵️  𝗜𝗻𝗱𝗶𝗮𝗻 𝗖𝗿𝗶𝗺𝗲 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Indian Series"
+  },
+  {
+   "type": "series",
+   "id": "india-comedy-series",
+   "name": "😄  𝗜𝗻𝗱𝗶𝗮𝗻 𝗖𝗼𝗺𝗲𝗱𝘆 𝗪𝗲𝗯 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Indian Series"
+  },
   {
    "type": "series",
    "id": "sitcoms",
@@ -67,52 +581,308 @@
    "extraSupported": [
     "genre",
     "skip"
-   ]
+   ],
+   "section": "😂 Sitcoms & Comedy",
+   "home": true
   },
   {
    "type": "movie",
-   "id": "malayalam",
-   "name": "🌴  Malayalam Movies",
+   "id": "comedy-movies",
+   "name": "🤣  𝗖𝗼𝗺𝗲𝗱𝘆 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "😂 Sitcoms & Comedy"
+  },
+  {
+   "type": "series",
+   "id": "dark-comedy-tv",
+   "name": "🖤  𝗗𝗮𝗿𝗸 𝗖𝗼𝗺𝗲𝗱𝘆 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "😂 Sitcoms & Comedy"
+  },
+  {
+   "type": "series",
+   "id": "adult-animation",
+   "name": "🧪  𝗔𝗱𝘂𝗹𝘁 𝗔𝗻𝗶𝗺𝗮𝘁𝗶𝗼𝗻",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "😂 Sitcoms & Comedy"
+  },
+  {
+   "type": "series",
+   "id": "adult-swim",
+   "name": "🌊  𝗔𝗱𝘂𝗹𝘁 𝗦𝘄𝗶𝗺",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "😂 Sitcoms & Comedy"
+  },
+  {
+   "type": "series",
+   "id": "anime-popular",
+   "name": "🌸  𝗔𝗻𝗶𝗺𝗲 · 𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime",
+   "home": true
+  },
+  {
+   "type": "series",
+   "id": "anime-airing",
+   "name": "📡  𝗔𝗻𝗶𝗺𝗲 · 𝗔𝗶𝗿𝗶𝗻𝗴 𝗡𝗼𝘄",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "series",
+   "id": "anime-top",
+   "name": "🏯  𝗔𝗻𝗶𝗺𝗲 · 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "movie",
+   "id": "anime-movies",
+   "name": "🎐  𝗔𝗻𝗶𝗺𝗲 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "series",
+   "id": "anime-shounen",
+   "name": "⚔️  𝗦𝗵ō𝗻𝗲𝗻 𝗕𝗮𝘁𝘁𝗹𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "series",
+   "id": "anime-isekai",
+   "name": "🌀  𝗜𝘀𝗲𝗸𝗮𝗶 𝗪𝗼𝗿𝗹𝗱𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "series",
+   "id": "anime-mecha",
+   "name": "🤖  𝗠𝗲𝗰𝗵𝗮 & 𝗚𝗶𝗮𝗻𝘁 𝗥𝗼𝗯𝗼𝘁𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "series",
+   "id": "anime-seinen",
+   "name": "🌑  𝗦𝗲𝗶𝗻𝗲𝗻 · 𝗗𝗮𝗿𝗸𝗲𝗿 𝗔𝗻𝗶𝗺𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "movie",
+   "id": "ghibli",
+   "name": "🍃  𝗦𝘁𝘂𝗱𝗶𝗼 𝗚𝗵𝗶𝗯𝗹𝗶",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🌸 Anime"
+  },
+  {
+   "type": "series",
+   "id": "netflix",
+   "name": "🟥  𝗡𝗲𝘁𝗳𝗹𝗶𝘅 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals",
+   "home": true
+  },
+  {
+   "type": "series",
+   "id": "prime",
+   "name": "🔷  𝗣𝗿𝗶𝗺𝗲 𝗩𝗶𝗱𝗲𝗼 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "hbo",
+   "name": "⬛  𝗛𝗕𝗢 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "max",
+   "name": "🟦  𝗠𝗮𝘅 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "apple",
+   "name": "🍎  𝗔𝗽𝗽𝗹𝗲 𝗧𝗩+ 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "disney",
+   "name": "🏰  𝗗𝗶𝘀𝗻𝗲𝘆+ 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "hulu",
+   "name": "🟩  𝗛𝘂𝗹𝘂 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "fx",
+   "name": "🎬  𝗙𝗫 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "amc",
+   "name": "🧟  𝗔𝗠𝗖 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "series",
+   "id": "bbc",
+   "name": "🇬🇧  𝗕𝗕𝗖 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🟥 Streaming Originals"
+  },
+  {
+   "type": "movie",
+   "id": "marvel-movies",
+   "name": "🦸  Marvel Movies",
    "genres": [
-    "Trending Now",
-    "Latest Releases",
-    "All Movies",
-    "Top Rated",
-    "This Year",
-    "Thriller",
-    "Comedy",
-    "Family Drama",
-    "Action and Mass",
-    "Romance",
-    "Horror",
-    "80s and 90s Classics",
-    "Mohanlal",
-    "Mammootty",
-    "Fahadh Faasil",
-    "Prithviraj",
-    "Dulquer Salmaan"
+    "Release Order",
+    "Newest First",
+    "MCU Only",
+    "Spider-Man",
+    "Top Rated"
    ],
    "extra": [
     {
      "name": "genre",
      "options": [
-      "Trending Now",
-      "Latest Releases",
-      "All Movies",
-      "Top Rated",
-      "This Year",
-      "Thriller",
-      "Comedy",
-      "Family Drama",
-      "Action and Mass",
-      "Romance",
-      "Horror",
-      "80s and 90s Classics",
-      "Mohanlal",
-      "Mammootty",
-      "Fahadh Faasil",
-      "Prithviraj",
-      "Dulquer Salmaan"
+      "Release Order",
+      "Newest First",
+      "MCU Only",
+      "Spider-Man",
+      "Top Rated"
      ],
      "isRequired": false
     },
@@ -124,52 +894,36 @@
    "extraSupported": [
     "genre",
     "skip"
-   ]
+   ],
+   "section": "🦸 Universes & Franchises",
+   "home": true
   },
   {
-   "type": "movie",
-   "id": "tamil",
-   "name": "🎺  Tamil Movies",
+   "type": "series",
+   "id": "marvel-series",
+   "name": "🦸  Marvel Series",
    "genres": [
-    "Trending Now",
-    "Latest Releases",
-    "All Movies",
-    "Top Rated",
-    "This Year",
-    "Action and Mass",
-    "Thriller",
-    "Comedy",
-    "Romance",
-    "Family Drama",
-    "Horror",
-    "80s and 90s Classics",
-    "Rajinikanth",
-    "Vijay",
-    "Kamal Haasan",
-    "Suriya",
-    "Dhanush"
+    "Release Order",
+    "Newest First",
+    "MCU Series",
+    "Netflix Defenders Saga",
+    "Live-Action",
+    "Animated",
+    "Spider-Man Series",
+    "Top Rated"
    ],
    "extra": [
     {
      "name": "genre",
      "options": [
-      "Trending Now",
-      "Latest Releases",
-      "All Movies",
-      "Top Rated",
-      "This Year",
-      "Action and Mass",
-      "Thriller",
-      "Comedy",
-      "Romance",
-      "Family Drama",
-      "Horror",
-      "80s and 90s Classics",
-      "Rajinikanth",
-      "Vijay",
-      "Kamal Haasan",
-      "Suriya",
-      "Dhanush"
+      "Release Order",
+      "Newest First",
+      "MCU Series",
+      "Netflix Defenders Saga",
+      "Live-Action",
+      "Animated",
+      "Spider-Man Series",
+      "Top Rated"
      ],
      "isRequired": false
     },
@@ -181,7 +935,1147 @@
    "extraSupported": [
     "genre",
     "skip"
-   ]
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "movie",
+   "id": "dc-movies",
+   "name": "🦇  DC Movies",
+   "genres": [
+    "Release Order",
+    "Newest First",
+    "Batman",
+    "Superman",
+    "Top Rated"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First",
+      "Batman",
+      "Superman",
+      "Top Rated"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "series",
+   "id": "dc-series",
+   "name": "🦇  DC Series",
+   "genres": [
+    "Release Order",
+    "Newest First",
+    "Top Rated"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First",
+      "Top Rated"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "movie",
+   "id": "xmen-movies",
+   "name": "🧬  X-Men Movies",
+   "genres": [
+    "Release Order",
+    "Newest First"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order",
+      "Newest First"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "series",
+   "id": "xmen-series",
+   "name": "🧬  X-Men Series",
+   "genres": [
+    "Release Order"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Release Order"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "movie",
+   "id": "franchises",
+   "name": "🌌  Movie Universes",
+   "genres": [
+    "Star Wars",
+    "Harry Potter and Wizarding World",
+    "James Bond 007",
+    "Fast and Furious",
+    "Mission: Impossible",
+    "Jurassic World",
+    "Pixar"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Star Wars",
+      "Harry Potter and Wizarding World",
+      "James Bond 007",
+      "Fast and Furious",
+      "Mission: Impossible",
+      "Jurassic World",
+      "Pixar"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "movie",
+   "id": "superhero-mov",
+   "name": "🦸  𝗦𝘂𝗽𝗲𝗿𝗵𝗲𝗿𝗼 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "series",
+   "id": "superhero-tv",
+   "name": "🦸  𝗦𝘂𝗽𝗲𝗿𝗵𝗲𝗿𝗼 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🦸 Universes & Franchises"
+  },
+  {
+   "type": "movie",
+   "id": "directors",
+   "name": "🎬  Directors",
+   "genres": [
+    "Christopher Nolan",
+    "Denis Villeneuve",
+    "Quentin Tarantino",
+    "David Fincher",
+    "Martin Scorsese",
+    "Steven Spielberg",
+    "Bong Joon Ho",
+    "Hayao Miyazaki",
+    "Lijo Jose Pellissery",
+    "Jeethu Joseph",
+    "Mani Ratnam",
+    "Lokesh Kanagaraj",
+    "S. S. Rajamouli"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Christopher Nolan",
+      "Denis Villeneuve",
+      "Quentin Tarantino",
+      "David Fincher",
+      "Martin Scorsese",
+      "Steven Spielberg",
+      "Bong Joon Ho",
+      "Hayao Miyazaki",
+      "Lijo Jose Pellissery",
+      "Jeethu Joseph",
+      "Mani Ratnam",
+      "Lokesh Kanagaraj",
+      "S. S. Rajamouli"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "🎬 Directors"
+  },
+  {
+   "type": "movie",
+   "id": "mind-bending",
+   "name": "🧠  𝗠𝗶𝗻𝗱-𝗕𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝘄𝗶𝘀𝘁𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods",
+   "home": true
+  },
+  {
+   "type": "movie",
+   "id": "thriller",
+   "name": "😰  𝗘𝗱𝗴𝗲-𝗼𝗳-𝗦𝗲𝗮𝘁 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "movie",
+   "id": "psych-thriller",
+   "name": "🌀  𝗣𝘀𝘆𝗰𝗵𝗼𝗹𝗼𝗴𝗶𝗰𝗮𝗹 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "movie",
+   "id": "feel-good",
+   "name": "🌈  𝗙𝗲𝗲𝗹-𝗚𝗼𝗼𝗱 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "movie",
+   "id": "romance",
+   "name": "💘  𝗗𝗮𝘁𝗲 𝗡𝗶𝗴𝗵𝘁 𝗥𝗼𝗺𝗮𝗻𝗰𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "movie",
+   "id": "revenge",
+   "name": "🗡️  𝗥𝗲𝘃𝗲𝗻𝗴𝗲 𝗦𝘁𝗼𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "movie",
+   "id": "quick-watch",
+   "name": "⏱️  𝗨𝗻𝗱𝗲𝗿 𝟵𝟬 𝗠𝗶𝗻𝘂𝘁𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "series",
+   "id": "binge-worthy",
+   "name": "🍿  𝗕𝗶𝗻𝗴𝗲-𝗪𝗼𝗿𝘁𝗵𝘆 · 𝟴+ 𝗥𝗮𝘁𝗲𝗱",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "movie",
+   "id": "hidden-gem-movies",
+   "name": "💎  𝗛𝗶𝗱𝗱𝗲𝗻 𝗚𝗲𝗺 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "series",
+   "id": "hidden-gem-series",
+   "name": "💎  𝗛𝗶𝗱𝗱𝗲𝗻 𝗚𝗲𝗺 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧠 Moods"
+  },
+  {
+   "type": "movie",
+   "id": "action",
+   "name": "💥  𝗣𝘂𝗿𝗲 𝗔𝗰𝘁𝗶𝗼𝗻",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "crime-movies",
+   "name": "🚔  𝗖𝗿𝗶𝗺𝗲 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "mystery-movies",
+   "name": "🗝️  𝗠𝘆𝘀𝘁𝗲𝗿𝘆 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "scifi-movies",
+   "name": "🛸  𝗦𝗰𝗶-𝗙𝗶 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "fantasy-movies",
+   "name": "🐉  𝗙𝗮𝗻𝘁𝗮𝘀𝘆 𝗪𝗼𝗿𝗹𝗱𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "adventure",
+   "name": "🧭  𝗕𝗶𝗴 𝗔𝗱𝘃𝗲𝗻𝘁𝘂𝗿𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "war-movies",
+   "name": "🪖  𝗪𝗮𝗿 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "westerns",
+   "name": "🤠  𝗪𝗲𝘀𝘁𝗲𝗿𝗻𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "musicals",
+   "name": "🎵  𝗠𝘂𝘀𝗶𝗰 & 𝗠𝘂𝘀𝗶𝗰𝗮𝗹𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "biopics",
+   "name": "🧑‍🎤  𝗕𝗶𝗼𝗽𝗶𝗰𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "courtroom",
+   "name": "⚖️  𝗖𝗼𝘂𝗿𝘁𝗿𝗼𝗼𝗺 𝗗𝗿𝗮𝗺𝗮𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "movie",
+   "id": "documentaries",
+   "name": "🌍  𝗗𝗼𝗰𝘂𝗺𝗲𝗻𝘁𝗮𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🎞️ Movie Genres"
+  },
+  {
+   "type": "series",
+   "id": "crime-series",
+   "name": "🔫  𝗖𝗿𝗶𝗺𝗲 & 𝗚𝗮𝗻𝗴𝘀𝘁𝗲𝗿 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "scifi-fantasy-tv",
+   "name": "🚀  𝗦𝗰𝗶-𝗙𝗶 & 𝗙𝗮𝗻𝘁𝗮𝘀𝘆 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "mystery-series",
+   "name": "🕵️  𝗠𝘆𝘀𝘁𝗲𝗿𝘆 & 𝗪𝗵𝗼𝗱𝘂𝗻𝗶𝘁𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "war-politics-tv",
+   "name": "🎖️  𝗪𝗮𝗿 & 𝗣𝗼𝗹𝗶𝘁𝗶𝗰𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "docuseries",
+   "name": "🎙️  𝗗𝗼𝗰𝘂𝘀𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "true-crime-tv",
+   "name": "🩸  𝗧𝗿𝘂𝗲 𝗖𝗿𝗶𝗺𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "k-drama",
+   "name": "💜  𝗞-𝗗𝗿𝗮𝗺𝗮 𝗛𝗶𝘁𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "teen-drama",
+   "name": "🎒  𝗧𝗲𝗲𝗻 𝗗𝗿𝗮𝗺𝗮",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "medical-drama",
+   "name": "🩺  𝗠𝗲𝗱𝗶𝗰𝗮𝗹 𝗗𝗿𝗮𝗺𝗮",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "legal-drama",
+   "name": "⚖️  𝗟𝗲𝗴𝗮𝗹 𝗗𝗿𝗮𝗺𝗮",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "series",
+   "id": "miniseries",
+   "name": "🧩  𝗣𝗲𝗿𝗳𝗲𝗰𝘁 𝗠𝗶𝗻𝗶𝘀𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📺 Series Genres"
+  },
+  {
+   "type": "movie",
+   "id": "time-travel-mov",
+   "name": "⏳  𝗧𝗶𝗺𝗲-𝗧𝗿𝗮𝘃𝗲𝗹 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "series",
+   "id": "time-travel-tv",
+   "name": "⏳  𝗧𝗶𝗺𝗲-𝗧𝗿𝗮𝘃𝗲𝗹 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "space",
+   "name": "🪐  𝗟𝗼𝘀𝘁 𝗶𝗻 𝗦𝗽𝗮𝗰𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "dystopia",
+   "name": "🏙️  𝗗𝘆𝘀𝘁𝗼𝗽𝗶𝗮𝗻 𝗙𝘂𝘁𝘂𝗿𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "cyberpunk",
+   "name": "🌃  𝗖𝘆𝗯𝗲𝗿𝗽𝘂𝗻𝗸",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "ai-robots",
+   "name": "🤖  𝗔𝗜 & 𝗥𝗼𝗯𝗼𝘁𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "aliens",
+   "name": "👽  𝗔𝗹𝗶𝗲𝗻 𝗜𝗻𝘃𝗮𝘀𝗶𝗼𝗻",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "series",
+   "id": "post-apoc-tv",
+   "name": "☢️  𝗘𝗻𝗱 𝗼𝗳 𝘁𝗵𝗲 𝗪𝗼𝗿𝗹𝗱",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "zombies",
+   "name": "🧟  𝗭𝗼𝗺𝗯𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "heist",
+   "name": "💰  𝗛𝗲𝗶𝘀𝘁𝘀 & 𝗖𝗮𝗽𝗲𝗿𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "spy",
+   "name": "🕶️  𝗦𝗽𝗶𝗲𝘀 & 𝗘𝘀𝗽𝗶𝗼𝗻𝗮𝗴𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "gangster",
+   "name": "🎩  𝗚𝗮𝗻𝗴𝘀𝘁𝗲𝗿 𝗘𝗽𝗶𝗰𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "martial-arts",
+   "name": "🥋  𝗠𝗮𝗿𝘁𝗶𝗮𝗹 𝗔𝗿𝘁𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "survival",
+   "name": "🏔️  𝗦𝘂𝗿𝘃𝗶𝘃𝗮𝗹 𝗦𝘁𝗼𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "disaster",
+   "name": "🌋  𝗗𝗶𝘀𝗮𝘀𝘁𝗲𝗿 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "road-trip",
+   "name": "🚗  𝗥𝗼𝗮𝗱 𝗧𝗿𝗶𝗽𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "true-story",
+   "name": "📰  𝗕𝗮𝘀𝗲𝗱 𝗼𝗻 𝗮 𝗧𝗿𝘂𝗲 𝗦𝘁𝗼𝗿𝘆",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "serial-killer",
+   "name": "🔪  𝗦𝗲𝗿𝗶𝗮𝗹-𝗞𝗶𝗹𝗹𝗲𝗿 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "cult-classics",
+   "name": "🦇  𝗖𝘂𝗹𝘁 𝗖𝗹𝗮𝘀𝘀𝗶𝗰𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "coming-of-age",
+   "name": "🌅  𝗖𝗼𝗺𝗶𝗻𝗴 𝗼𝗳 𝗔𝗴𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "sports-movies",
+   "name": "🏏  𝗦𝗽𝗼𝗿𝘁𝘀 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🪐 Themes & Worlds"
+  },
+  {
+   "type": "movie",
+   "id": "horror",
+   "name": "👻  𝗛𝗼𝗿𝗿𝗼𝗿 𝗡𝗶𝗴𝗵𝘁",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "👻 Horror Corner"
+  },
+  {
+   "type": "movie",
+   "id": "haunted",
+   "name": "🏚️  𝗛𝗮𝘂𝗻𝘁𝗲𝗱 𝗛𝗼𝘂𝘀𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "👻 Horror Corner"
+  },
+  {
+   "type": "movie",
+   "id": "slashers",
+   "name": "🎃  𝗦𝗹𝗮𝘀𝗵𝗲𝗿𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "👻 Horror Corner"
+  },
+  {
+   "type": "movie",
+   "id": "found-footage",
+   "name": "📹  𝗙𝗼𝘂𝗻𝗱 𝗙𝗼𝗼𝘁𝗮𝗴𝗲",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "👻 Horror Corner"
+  },
+  {
+   "type": "movie",
+   "id": "vampires",
+   "name": "🧛  𝗩𝗮𝗺𝗽𝗶𝗿𝗲𝘀 & 𝗪𝗲𝗿𝗲𝘄𝗼𝗹𝘃𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "👻 Horror Corner"
+  },
+  {
+   "type": "movie",
+   "id": "best-of",
+   "name": "🏅  Best Of",
+   "genres": [
+    "Top 250",
+    "Oscar Best Picture",
+    "Best of the 2010s",
+    "Best of the 2020s"
+   ],
+   "extra": [
+    {
+     "name": "genre",
+     "options": [
+      "Top 250",
+      "Oscar Best Picture",
+      "Best of the 2010s",
+      "Best of the 2020s"
+     ],
+     "isRequired": false
+    },
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "extraSupported": [
+    "genre",
+    "skip"
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "movies-this-year",
+   "name": "📅  𝗕𝗲𝘀𝘁 𝗠𝗼𝘃𝗶𝗲𝘀 𝗧𝗵𝗶𝘀 𝗬𝗲𝗮𝗿",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "movies-last-year",
+   "name": "🗓️  𝗕𝗲𝘀𝘁 𝗠𝗼𝘃𝗶𝗲𝘀 𝗟𝗮𝘀𝘁 𝗬𝗲𝗮𝗿",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "movies-00s",
+   "name": "📀  𝗕𝗲𝘀𝘁 𝗼𝗳 𝘁𝗵𝗲 𝟮𝟬𝟬𝟬𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "movies-90s",
+   "name": "💿  𝗕𝗲𝘀𝘁 𝗼𝗳 𝘁𝗵𝗲 𝟵𝟬𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "movies-80s",
+   "name": "📼  𝗕𝗲𝘀𝘁 𝗼𝗳 𝘁𝗵𝗲 𝟴𝟬𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "top-rated-movies",
+   "name": "🏆  𝗔𝗹𝗹-𝗧𝗶𝗺𝗲 𝗧𝗼𝗽 𝗥𝗮𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "series",
+   "id": "top-rated-series",
+   "name": "🏆  𝗔𝗹𝗹-𝗧𝗶𝗺𝗲 𝗧𝗼𝗽 𝗥𝗮𝘁𝗲𝗱 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "movies-top-5000",
+   "name": "🥇  𝗧𝗼𝗽 𝟱𝟬𝟬𝟬 𝗥𝗮𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "movies-all",
+   "name": "♾️  𝗘𝘃𝗲𝗿𝘆 𝗠𝗼𝘃𝗶𝗲 · 𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "series",
+   "id": "series-all",
+   "name": "♾️  𝗘𝘃𝗲𝗿𝘆 𝗦𝗲𝗿𝗶𝗲𝘀 · 𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "📼 Best Of & Decades"
+  },
+  {
+   "type": "movie",
+   "id": "family-animation",
+   "name": "🧸  𝗔𝗻𝗶𝗺𝗮𝘁𝗲𝗱 𝗙𝗮𝗺𝗶𝗹𝘆 𝗠𝗼𝘃𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧸 Family & Seasonal"
+  },
+  {
+   "type": "series",
+   "id": "kids-tv",
+   "name": "🧒  𝗞𝗶𝗱𝘀 & 𝗙𝗮𝗺𝗶𝗹𝘆 𝗦𝗲𝗿𝗶𝗲𝘀",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧸 Family & Seasonal"
+  },
+  {
+   "type": "series",
+   "id": "cartoons",
+   "name": "🐭  𝗖𝗮𝗿𝘁𝗼𝗼𝗻𝘀 (𝗡𝗼𝗻-𝗔𝗻𝗶𝗺𝗲)",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧸 Family & Seasonal"
+  },
+  {
+   "type": "movie",
+   "id": "christmas",
+   "name": "🎄  𝗖𝗵𝗿𝗶𝘀𝘁𝗺𝗮𝘀 & 𝗡𝗲𝘄 𝗬𝗲𝗮𝗿",
+   "extra": [
+    {
+     "name": "skip",
+     "isRequired": false
+    }
+   ],
+   "section": "🧸 Family & Seasonal"
   },
   {
    "type": "movie",
@@ -230,7 +2124,8 @@
    "extraSupported": [
     "genre",
     "skip"
-   ]
+   ],
+   "section": "🔞 18+"
   },
   {
    "type": "series",
@@ -273,1589 +2168,267 @@
    "extraSupported": [
     "genre",
     "skip"
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "marvel-movies",
-   "name": "🦸  Marvel Movies",
-   "genres": [
-    "Release Order",
-    "Newest First",
-    "MCU Only",
-    "Spider-Man",
-    "Top Rated"
    ],
-   "extra": [
-    {
-     "name": "genre",
-     "options": [
-      "Release Order",
-      "Newest First",
-      "MCU Only",
-      "Spider-Man",
-      "Top Rated"
-     ],
-     "isRequired": false
-    },
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ],
-   "extraSupported": [
-    "genre",
-    "skip"
+   "section": "🔞 18+"
+  }
+ ],
+ "sections": [
+  {
+   "id": "for-you",
+   "name": "🎯 For You",
+   "catalogs": [
+    "fav-series",
+    "fav-movies",
+    "for-you-series",
+    "for-you-movies",
+    "because-breaking-bad",
+    "because-game-of-thrones",
+    "because-friends",
+    "because-the-office",
+    "because-dark",
+    "because-interstellar",
+    "because-inception",
+    "because-the-dark-knight"
+   ]
+  },
+  {
+   "id": "trending",
+   "name": "🔥 Trending & New",
+   "catalogs": [
+    "trending-movies-day",
+    "trending-series-day",
+    "trending-movies-week",
+    "trending-series-week",
+    "ott-new",
+    "now-playing",
+    "airing-this-week",
+    "popular-movies",
+    "popular-series"
+   ]
+  },
+  {
+   "id": "malayalam",
+   "name": "🌴 Malayalam",
+   "catalogs": [
+    "malayalam"
+   ]
+  },
+  {
+   "id": "tamil",
+   "name": "🎺 Tamil",
+   "catalogs": [
+    "tamil"
+   ]
+  },
+  {
+   "id": "indian",
+   "name": "🇮🇳 More Indian",
+   "catalogs": [
+    "pan-india",
+    "hi-trending",
+    "hi-best",
+    "hi-all",
+    "te-trending",
+    "te-best",
+    "kn-best"
+   ]
+  },
+  {
+   "id": "indian-tv",
+   "name": "📺 Indian Series",
+   "catalogs": [
+    "india-series-pop",
+    "india-series-best",
+    "india-crime-series",
+    "india-comedy-series"
+   ]
+  },
+  {
+   "id": "comedy",
+   "name": "😂 Sitcoms & Comedy",
+   "catalogs": [
+    "sitcoms",
+    "comedy-movies",
+    "dark-comedy-tv",
+    "adult-animation",
+    "adult-swim"
+   ]
+  },
+  {
+   "id": "anime",
+   "name": "🌸 Anime",
+   "catalogs": [
+    "anime-popular",
+    "anime-airing",
+    "anime-top",
+    "anime-movies",
+    "anime-shounen",
+    "anime-isekai",
+    "anime-mecha",
+    "anime-seinen",
+    "ghibli"
+   ]
+  },
+  {
+   "id": "originals",
+   "name": "🟥 Streaming Originals",
+   "catalogs": [
+    "netflix",
+    "prime",
+    "hbo",
+    "max",
+    "apple",
+    "disney",
+    "hulu",
+    "fx",
+    "amc",
+    "bbc"
+   ]
+  },
+  {
+   "id": "universes",
+   "name": "🦸 Universes & Franchises",
+   "catalogs": [
+    "marvel-movies",
+    "marvel-series",
+    "dc-movies",
+    "dc-series",
+    "xmen-movies",
+    "xmen-series",
+    "franchises",
+    "superhero-mov",
+    "superhero-tv"
+   ]
+  },
+  {
+   "id": "directors",
+   "name": "🎬 Directors",
+   "catalogs": [
+    "directors"
+   ]
+  },
+  {
+   "id": "moods",
+   "name": "🧠 Moods",
+   "catalogs": [
+    "mind-bending",
+    "thriller",
+    "psych-thriller",
+    "feel-good",
+    "romance",
+    "revenge",
+    "quick-watch",
+    "binge-worthy",
+    "hidden-gem-movies",
+    "hidden-gem-series"
+   ]
+  },
+  {
+   "id": "movie-genres",
+   "name": "🎞️ Movie Genres",
+   "catalogs": [
+    "action",
+    "crime-movies",
+    "mystery-movies",
+    "scifi-movies",
+    "fantasy-movies",
+    "adventure",
+    "war-movies",
+    "westerns",
+    "musicals",
+    "biopics",
+    "courtroom",
+    "documentaries"
+   ]
+  },
+  {
+   "id": "series-genres",
+   "name": "📺 Series Genres",
+   "catalogs": [
+    "crime-series",
+    "scifi-fantasy-tv",
+    "mystery-series",
+    "war-politics-tv",
+    "docuseries",
+    "true-crime-tv",
+    "k-drama",
+    "teen-drama",
+    "medical-drama",
+    "legal-drama",
+    "miniseries"
+   ]
+  },
+  {
+   "id": "themes",
+   "name": "🪐 Themes & Worlds",
+   "catalogs": [
+    "time-travel-mov",
+    "time-travel-tv",
+    "space",
+    "dystopia",
+    "cyberpunk",
+    "ai-robots",
+    "aliens",
+    "post-apoc-tv",
+    "zombies",
+    "heist",
+    "spy",
+    "gangster",
+    "martial-arts",
+    "survival",
+    "disaster",
+    "road-trip",
+    "true-story",
+    "serial-killer",
+    "cult-classics",
+    "coming-of-age",
+    "sports-movies"
    ]
   },
   {
-   "type": "series",
-   "id": "marvel-series",
-   "name": "🦸  Marvel Series",
-   "genres": [
-    "Release Order",
-    "Newest First",
-    "MCU Series",
-    "Netflix Defenders Saga",
-    "Live-Action",
-    "Animated",
-    "Spider-Man Series",
-    "Top Rated"
-   ],
-   "extra": [
-    {
-     "name": "genre",
-     "options": [
-      "Release Order",
-      "Newest First",
-      "MCU Series",
-      "Netflix Defenders Saga",
-      "Live-Action",
-      "Animated",
-      "Spider-Man Series",
-      "Top Rated"
-     ],
-     "isRequired": false
-    },
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ],
-   "extraSupported": [
-    "genre",
-    "skip"
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "xmen-movies",
-   "name": "🧬  X-Men Movies",
-   "genres": [
-    "Release Order",
-    "Newest First"
-   ],
-   "extra": [
-    {
-     "name": "genre",
-     "options": [
-      "Release Order",
-      "Newest First"
-     ],
-     "isRequired": false
-    },
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ],
-   "extraSupported": [
-    "genre",
-    "skip"
-   ]
-  },
-  {
-   "type": "series",
-   "id": "xmen-series",
-   "name": "🧬  X-Men Series",
-   "genres": [
-    "Release Order"
-   ],
-   "extra": [
-    {
-     "name": "genre",
-     "options": [
-      "Release Order"
-     ],
-     "isRequired": false
-    },
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ],
-   "extraSupported": [
-    "genre",
-    "skip"
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "dc-movies",
-   "name": "🦇  DC Movies",
-   "genres": [
-    "Release Order",
-    "Newest First",
-    "Batman",
-    "Superman",
-    "Top Rated"
-   ],
-   "extra": [
-    {
-     "name": "genre",
-     "options": [
-      "Release Order",
-      "Newest First",
-      "Batman",
-      "Superman",
-      "Top Rated"
-     ],
-     "isRequired": false
-    },
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ],
-   "extraSupported": [
-    "genre",
-    "skip"
-   ]
-  },
-  {
-   "type": "series",
-   "id": "dc-series",
-   "name": "🦇  DC Series",
-   "genres": [
-    "Release Order",
-    "Newest First",
-    "Top Rated"
-   ],
-   "extra": [
-    {
-     "name": "genre",
-     "options": [
-      "Release Order",
-      "Newest First",
-      "Top Rated"
-     ],
-     "isRequired": false
-    },
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ],
-   "extraSupported": [
-    "genre",
-    "skip"
-   ]
-  },
-  {
-   "type": "series",
-   "id": "fav-series",
-   "name": "❤️  𝗠𝘆 𝗙𝗮𝘃𝗼𝘂𝗿𝗶𝘁𝗲 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "for-you-series",
-   "name": "🎯  𝗙𝗼𝗿 𝗬𝗼𝘂 · 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "because-breaking-bad",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗕𝗿𝗲𝗮𝗸𝗶𝗻𝗴 𝗕𝗮𝗱",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "because-game-of-thrones",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗚𝗮𝗺𝗲 𝗼𝗳 𝗧𝗵𝗿𝗼𝗻𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "because-friends",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗙𝗿𝗶𝗲𝗻𝗱𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "because-the-office",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗧𝗵𝗲 𝗢𝗳𝗳𝗶𝗰𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "because-dark",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗗𝗮𝗿𝗸",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "fav-movies",
-   "name": "❤️  𝗠𝘆 𝗙𝗮𝘃𝗼𝘂𝗿𝗶𝘁𝗲 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "for-you-movies",
-   "name": "🎯  𝗙𝗼𝗿 𝗬𝗼𝘂 · 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "because-interstellar",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗜𝗻𝘁𝗲𝗿𝘀𝘁𝗲𝗹𝗹𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "because-inception",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗜𝗻𝗰𝗲𝗽𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "because-the-dark-knight",
-   "name": "💡  𝗕𝗲𝗰𝗮𝘂𝘀𝗲 𝗬𝗼𝘂 𝗟𝗶𝗸𝗲 𝗧𝗵𝗲 𝗗𝗮𝗿𝗸 𝗞𝗻𝗶𝗴𝗵𝘁",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "trending-series-day",
-   "name": "🔥  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗼𝗱𝗮𝘆 · 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "trending-movies-day",
-   "name": "🔥  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗼𝗱𝗮𝘆 · 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "trending-series-week",
-   "name": "📈  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗵𝗶𝘀 𝗪𝗲𝗲𝗸 · 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "trending-movies-week",
-   "name": "📈  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝗵𝗶𝘀 𝗪𝗲𝗲𝗸 · 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "popular-series",
-   "name": "⭐  𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "popular-movies",
-   "name": "⭐  𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "top-rated-series",
-   "name": "🏆  𝗔𝗹𝗹-𝗧𝗶𝗺𝗲 𝗧𝗼𝗽 𝗥𝗮𝘁𝗲𝗱 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "top-rated-movies",
-   "name": "🏆  𝗔𝗹𝗹-𝗧𝗶𝗺𝗲 𝗧𝗼𝗽 𝗥𝗮𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "now-playing",
-   "name": "🎟️  𝗙𝗿𝗲𝘀𝗵 𝗙𝗿𝗼𝗺 𝗧𝗵𝗲𝗮𝘁𝗿𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "airing-this-week",
-   "name": "📺  𝗡𝗲𝘄 𝗘𝗽𝗶𝘀𝗼𝗱𝗲𝘀 𝗧𝗵𝗶𝘀 𝗪𝗲𝗲𝗸",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "hi-trending",
-   "name": "🪔  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗶𝗻 𝗛𝗶𝗻𝗱𝗶",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "hi-best",
-   "name": "🏆  𝗕𝗼𝗹𝗹𝘆𝘄𝗼𝗼𝗱 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "hi-all",
-   "name": "🎞️  𝗘𝘃𝗲𝗿𝘆 𝗛𝗶𝗻𝗱𝗶 𝗠𝗼𝘃𝗶𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "te-trending",
-   "name": "🌶️  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗶𝗻 𝗧𝗲𝗹𝘂𝗴𝘂",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "te-best",
-   "name": "🏆  𝗧𝗲𝗹𝘂𝗴𝘂 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "kn-best",
-   "name": "🏆  𝗞𝗮𝗻𝗻𝗮𝗱𝗮 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "india-series-best",
-   "name": "🇮🇳  𝗕𝗲𝘀𝘁 𝗜𝗻𝗱𝗶𝗮𝗻 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "india-series-pop",
-   "name": "📈  𝗧𝗿𝗲𝗻𝗱𝗶𝗻𝗴 𝗜𝗻𝗱𝗶𝗮𝗻 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "india-crime-series",
-   "name": "🕵️  𝗜𝗻𝗱𝗶𝗮𝗻 𝗖𝗿𝗶𝗺𝗲 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "dark-comedy-tv",
-   "name": "🖤  𝗗𝗮𝗿𝗸 𝗖𝗼𝗺𝗲𝗱𝘆 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "anime-popular",
-   "name": "🌸  𝗔𝗻𝗶𝗺𝗲 · 𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "anime-top",
-   "name": "🏯  𝗔𝗻𝗶𝗺𝗲 · 𝗠𝗮𝘀𝘁𝗲𝗿𝗽𝗶𝗲𝗰𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "anime-airing",
-   "name": "📡  𝗔𝗻𝗶𝗺𝗲 · 𝗔𝗶𝗿𝗶𝗻𝗴 𝗡𝗼𝘄",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "anime-movies",
-   "name": "🎐  𝗔𝗻𝗶𝗺𝗲 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "anime-shounen",
-   "name": "⚔️  𝗦𝗵ō𝗻𝗲𝗻 𝗕𝗮𝘁𝘁𝗹𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "anime-isekai",
-   "name": "🌀  𝗜𝘀𝗲𝗸𝗮𝗶 𝗪𝗼𝗿𝗹𝗱𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "anime-mecha",
-   "name": "🤖  𝗠𝗲𝗰𝗵𝗮 & 𝗚𝗶𝗮𝗻𝘁 𝗥𝗼𝗯𝗼𝘁𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "anime-seinen",
-   "name": "🌑  𝗦𝗲𝗶𝗻𝗲𝗻 · 𝗗𝗮𝗿𝗸𝗲𝗿 𝗔𝗻𝗶𝗺𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ghibli",
-   "name": "🍃  𝗦𝘁𝘂𝗱𝗶𝗼 𝗚𝗵𝗶𝗯𝗹𝗶",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "netflix",
-   "name": "🟥  𝗡𝗲𝘁𝗳𝗹𝗶𝘅 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "hbo",
-   "name": "⬛  𝗛𝗕𝗢 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "max",
-   "name": "🟦  𝗠𝗮𝘅 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "prime",
-   "name": "🔷  𝗣𝗿𝗶𝗺𝗲 𝗩𝗶𝗱𝗲𝗼 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "apple",
-   "name": "🍎  𝗔𝗽𝗽𝗹𝗲 𝗧𝗩+ 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "disney",
-   "name": "🏰  𝗗𝗶𝘀𝗻𝗲𝘆+ 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "hulu",
-   "name": "🟩  𝗛𝘂𝗹𝘂 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "fx",
-   "name": "🎬  𝗙𝗫 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "amc",
-   "name": "🧟  𝗔𝗠𝗖 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "bbc",
-   "name": "🇬🇧  𝗕𝗕𝗖 𝗢𝗿𝗶𝗴𝗶𝗻𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "adult-swim",
-   "name": "🌊  𝗔𝗱𝘂𝗹𝘁 𝗦𝘄𝗶𝗺",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "binge-worthy",
-   "name": "🍿  𝗕𝗶𝗻𝗴𝗲-𝗪𝗼𝗿𝘁𝗵𝘆 · 𝟴+ 𝗥𝗮𝘁𝗲𝗱",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "hidden-gem-series",
-   "name": "💎  𝗛𝗶𝗱𝗱𝗲𝗻 𝗚𝗲𝗺 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "miniseries",
-   "name": "🧩  𝗣𝗲𝗿𝗳𝗲𝗰𝘁 𝗠𝗶𝗻𝗶𝘀𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "crime-series",
-   "name": "🔫  𝗖𝗿𝗶𝗺𝗲 & 𝗚𝗮𝗻𝗴𝘀𝘁𝗲𝗿 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "scifi-fantasy-tv",
-   "name": "🚀  𝗦𝗰𝗶-𝗙𝗶 & 𝗙𝗮𝗻𝘁𝗮𝘀𝘆 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "mystery-series",
-   "name": "🕵️  𝗠𝘆𝘀𝘁𝗲𝗿𝘆 & 𝗪𝗵𝗼𝗱𝘂𝗻𝗶𝘁𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "war-politics-tv",
-   "name": "🎖️  𝗪𝗮𝗿 & 𝗣𝗼𝗹𝗶𝘁𝗶𝗰𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "docuseries",
-   "name": "🎙️  𝗗𝗼𝗰𝘂𝘀𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "true-crime-tv",
-   "name": "🩸  𝗧𝗿𝘂𝗲 𝗖𝗿𝗶𝗺𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "k-drama",
-   "name": "💜  𝗞-𝗗𝗿𝗮𝗺𝗮 𝗛𝗶𝘁𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "superhero-tv",
-   "name": "🦸  𝗦𝘂𝗽𝗲𝗿𝗵𝗲𝗿𝗼 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "post-apoc-tv",
-   "name": "☢️  𝗘𝗻𝗱 𝗼𝗳 𝘁𝗵𝗲 𝗪𝗼𝗿𝗹𝗱",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "time-travel-tv",
-   "name": "⏳  𝗧𝗶𝗺𝗲-𝗧𝗿𝗮𝘃𝗲𝗹 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "adult-animation",
-   "name": "🧪  𝗔𝗱𝘂𝗹𝘁 𝗔𝗻𝗶𝗺𝗮𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "teen-drama",
-   "name": "🎒  𝗧𝗲𝗲𝗻 𝗗𝗿𝗮𝗺𝗮",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "medical-drama",
-   "name": "🩺  𝗠𝗲𝗱𝗶𝗰𝗮𝗹 𝗗𝗿𝗮𝗺𝗮",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "legal-drama",
-   "name": "⚖️  𝗟𝗲𝗴𝗮𝗹 𝗗𝗿𝗮𝗺𝗮",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "mind-bending",
-   "name": "🧠  𝗠𝗶𝗻𝗱-𝗕𝗲𝗻𝗱𝗶𝗻𝗴 𝗧𝘄𝗶𝘀𝘁𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "time-travel-mov",
-   "name": "⏳  𝗧𝗶𝗺𝗲-𝗧𝗿𝗮𝘃𝗲𝗹 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "heist",
-   "name": "💰  𝗛𝗲𝗶𝘀𝘁𝘀 & 𝗖𝗮𝗽𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "serial-killer",
-   "name": "🔪  𝗦𝗲𝗿𝗶𝗮𝗹-𝗞𝗶𝗹𝗹𝗲𝗿 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "true-story",
-   "name": "📰  𝗕𝗮𝘀𝗲𝗱 𝗼𝗻 𝗮 𝗧𝗿𝘂𝗲 𝗦𝘁𝗼𝗿𝘆",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "dystopia",
-   "name": "🏙️  𝗗𝘆𝘀𝘁𝗼𝗽𝗶𝗮𝗻 𝗙𝘂𝘁𝘂𝗿𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "cyberpunk",
-   "name": "🌃  𝗖𝘆𝗯𝗲𝗿𝗽𝘂𝗻𝗸",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "space",
-   "name": "🪐  𝗟𝗼𝘀𝘁 𝗶𝗻 𝗦𝗽𝗮𝗰𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "zombies",
-   "name": "🧟  𝗭𝗼𝗺𝗯𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "superhero-mov",
-   "name": "🦸  𝗦𝘂𝗽𝗲𝗿𝗵𝗲𝗿𝗼 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "coming-of-age",
-   "name": "🌅  𝗖𝗼𝗺𝗶𝗻𝗴 𝗼𝗳 𝗔𝗴𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "cult-classics",
-   "name": "🦇  𝗖𝘂𝗹𝘁 𝗖𝗹𝗮𝘀𝘀𝗶𝗰𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "martial-arts",
-   "name": "🥋  𝗠𝗮𝗿𝘁𝗶𝗮𝗹 𝗔𝗿𝘁𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "psych-thriller",
-   "name": "🌀  𝗣𝘀𝘆𝗰𝗵𝗼𝗹𝗼𝗴𝗶𝗰𝗮𝗹 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "revenge",
-   "name": "🗡️  𝗥𝗲𝘃𝗲𝗻𝗴𝗲 𝗦𝘁𝗼𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "feel-good",
-   "name": "🌈  𝗙𝗲𝗲𝗹-𝗚𝗼𝗼𝗱 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "hidden-gem-movies",
-   "name": "💎  𝗛𝗶𝗱𝗱𝗲𝗻 𝗚𝗲𝗺 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "quick-watch",
-   "name": "⏱️  𝗨𝗻𝗱𝗲𝗿 𝟵𝟬 𝗠𝗶𝗻𝘂𝘁𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "action",
-   "name": "💥  𝗣𝘂𝗿𝗲 𝗔𝗰𝘁𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
    "id": "horror",
-   "name": "👻  𝗛𝗼𝗿𝗿𝗼𝗿 𝗡𝗶𝗴𝗵𝘁",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
+   "name": "👻 Horror Corner",
+   "catalogs": [
+    "horror",
+    "haunted",
+    "slashers",
+    "found-footage",
+    "vampires"
    ]
   },
   {
-   "type": "movie",
-   "id": "scifi-movies",
-   "name": "🛸  𝗦𝗰𝗶-𝗙𝗶 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
+   "id": "decades",
+   "name": "📼 Best Of & Decades",
+   "catalogs": [
+    "best-of",
+    "movies-this-year",
+    "movies-last-year",
+    "movies-00s",
+    "movies-90s",
+    "movies-80s",
+    "top-rated-movies",
+    "top-rated-series",
+    "movies-top-5000",
+    "movies-all",
+    "series-all"
    ]
   },
   {
-   "type": "movie",
-   "id": "romance",
-   "name": "💘  𝗗𝗮𝘁𝗲 𝗡𝗶𝗴𝗵𝘁 𝗥𝗼𝗺𝗮𝗻𝗰𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
+   "id": "family",
+   "name": "🧸 Family & Seasonal",
+   "catalogs": [
+    "family-animation",
+    "kids-tv",
+    "cartoons",
+    "christmas"
    ]
   },
   {
-   "type": "movie",
-   "id": "comedy-movies",
-   "name": "🤣  𝗖𝗼𝗺𝗲𝗱𝘆 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "family-animation",
-   "name": "🧸  𝗔𝗻𝗶𝗺𝗮𝘁𝗲𝗱 𝗙𝗮𝗺𝗶𝗹𝘆 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "documentaries",
-   "name": "🌍  𝗗𝗼𝗰𝘂𝗺𝗲𝗻𝘁𝗮𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "movies-80s",
-   "name": "📼  𝗕𝗲𝘀𝘁 𝗼𝗳 𝘁𝗵𝗲 𝟴𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "movies-90s",
-   "name": "💿  𝗕𝗲𝘀𝘁 𝗼𝗳 𝘁𝗵𝗲 𝟵𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "movies-00s",
-   "name": "📀  𝗕𝗲𝘀𝘁 𝗼𝗳 𝘁𝗵𝗲 𝟮𝟬𝟬𝟬𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "movies-all",
-   "name": "♾️  𝗘𝘃𝗲𝗿𝘆 𝗠𝗼𝘃𝗶𝗲 · 𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "movies-top-5000",
-   "name": "🥇  𝗧𝗼𝗽 𝟱𝟬𝟬𝟬 𝗥𝗮𝘁𝗲𝗱 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "series-all",
-   "name": "♾️  𝗘𝘃𝗲𝗿𝘆 𝗦𝗲𝗿𝗶𝗲𝘀 · 𝗠𝗼𝘀𝘁 𝗣𝗼𝗽𝘂𝗹𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "movies-this-year",
-   "name": "📅  𝗕𝗲𝘀𝘁 𝗠𝗼𝘃𝗶𝗲𝘀 𝗧𝗵𝗶𝘀 𝗬𝗲𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "movies-last-year",
-   "name": "🗓️  𝗕𝗲𝘀𝘁 𝗠𝗼𝘃𝗶𝗲𝘀 𝗟𝗮𝘀𝘁 𝗬𝗲𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "thriller",
-   "name": "😰  𝗘𝗱𝗴𝗲-𝗼𝗳-𝗦𝗲𝗮𝘁 𝗧𝗵𝗿𝗶𝗹𝗹𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "crime-movies",
-   "name": "🚔  𝗖𝗿𝗶𝗺𝗲 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "mystery-movies",
-   "name": "🗝️  𝗠𝘆𝘀𝘁𝗲𝗿𝘆 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "fantasy-movies",
-   "name": "🐉  𝗙𝗮𝗻𝘁𝗮𝘀𝘆 𝗪𝗼𝗿𝗹𝗱𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "adventure",
-   "name": "🧭  𝗕𝗶𝗴 𝗔𝗱𝘃𝗲𝗻𝘁𝘂𝗿𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "war-movies",
-   "name": "🪖  𝗪𝗮𝗿 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "westerns",
-   "name": "🤠  𝗪𝗲𝘀𝘁𝗲𝗿𝗻𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "musicals",
-   "name": "🎵  𝗠𝘂𝘀𝗶𝗰 & 𝗠𝘂𝘀𝗶𝗰𝗮𝗹𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "biopics",
-   "name": "🧑‍🎤  𝗕𝗶𝗼𝗽𝗶𝗰𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "courtroom",
-   "name": "⚖️  𝗖𝗼𝘂𝗿𝘁𝗿𝗼𝗼𝗺 𝗗𝗿𝗮𝗺𝗮𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "survival",
-   "name": "🏔️  𝗦𝘂𝗿𝘃𝗶𝘃𝗮𝗹 𝗦𝘁𝗼𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "spy",
-   "name": "🕶️  𝗦𝗽𝗶𝗲𝘀 & 𝗘𝘀𝗽𝗶𝗼𝗻𝗮𝗴𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "gangster",
-   "name": "🎩  𝗚𝗮𝗻𝗴𝘀𝘁𝗲𝗿 𝗘𝗽𝗶𝗰𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "disaster",
-   "name": "🌋  𝗗𝗶𝘀𝗮𝘀𝘁𝗲𝗿 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "sports-movies",
-   "name": "🏏  𝗦𝗽𝗼𝗿𝘁𝘀 𝗠𝗼𝘃𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "road-trip",
-   "name": "🚗  𝗥𝗼𝗮𝗱 𝗧𝗿𝗶𝗽𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "vampires",
-   "name": "🧛  𝗩𝗮𝗺𝗽𝗶𝗿𝗲𝘀 & 𝗪𝗲𝗿𝗲𝘄𝗼𝗹𝘃𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "haunted",
-   "name": "🏚️  𝗛𝗮𝘂𝗻𝘁𝗲𝗱 𝗛𝗼𝘂𝘀𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "slashers",
-   "name": "🎃  𝗦𝗹𝗮𝘀𝗵𝗲𝗿𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "found-footage",
-   "name": "📹  𝗙𝗼𝘂𝗻𝗱 𝗙𝗼𝗼𝘁𝗮𝗴𝗲",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "aliens",
-   "name": "👽  𝗔𝗹𝗶𝗲𝗻 𝗜𝗻𝘃𝗮𝘀𝗶𝗼𝗻",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "ai-robots",
-   "name": "🤖  𝗔𝗜 & 𝗥𝗼𝗯𝗼𝘁𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "movie",
-   "id": "christmas",
-   "name": "🎄  𝗖𝗵𝗿𝗶𝘀𝘁𝗺𝗮𝘀 & 𝗡𝗲𝘄 𝗬𝗲𝗮𝗿",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "kids-tv",
-   "name": "🧒  𝗞𝗶𝗱𝘀 & 𝗙𝗮𝗺𝗶𝗹𝘆 𝗦𝗲𝗿𝗶𝗲𝘀",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
-   ]
-  },
-  {
-   "type": "series",
-   "id": "cartoons",
-   "name": "🐭  𝗖𝗮𝗿𝘁𝗼𝗼𝗻𝘀 (𝗡𝗼𝗻-𝗔𝗻𝗶𝗺𝗲)",
-   "extra": [
-    {
-     "name": "skip",
-     "isRequired": false
-    }
+   "id": "adult",
+   "name": "🔞 18+",
+   "catalogs": [
+    "adult-movies",
+    "adult-series"
    ]
   }
  ],
